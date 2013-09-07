@@ -65,6 +65,14 @@ far I can get.
 
 *** Unsupervised Learning
 
+*** Tools
+
+**** Weka
+
+***** Links
+ 
+- [[http://www.cs.waikato.ac.nz/ml/weka/][Home Page]]
+
 ** Mathematics
 
 *** Linear Algebra
@@ -122,6 +130,7 @@ far I can get.
 - [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Functional_pearls][Functional Pearls]]
 - [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Data_structures][Research Papers on Data Structures]]
 - [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Top_10][Top Research Papers]]
+- [ ] [[http://www.scs.stanford.edu/11au-cs240h/notes/][Lecture Notes from Stanford's Haskell Course]]
   
 *** C++
 
