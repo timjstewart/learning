@@ -29,34 +29,121 @@ far I can get.
 
 *** Bayesian Networks
 
+*** Books
+**** "Artificial Intelligence, A Modern Approach" by Norvig, et al.
+** Big Data
+*** Hadoop
+*** Cascading
 ** Cognitive Science
 
 *** Books
 
 **** "Brain Rules" by John Medina
 
+** Computer Architecture
+*** Memory Hierarchy
+**** Registers
+**** L1 Cache
+**** L2 Cache
+**** L3 Cache
+**** Main Memory
+**** Disk
+**** Network
+**** NUMA
+**** MESI Protocol
+**** Interconnect
+**** Load/Store Buffers
+**** Write Absorbtion
+*** Central Processing Unit
+*** Networking
+*** CUDA
+*** Storage Drives
+**** SSD
+**** Hard Drive (Rotating)
 ** Databases
 
 *** Relational
+
+**** MySQL
+**** PostgreSQL
 
 *** NoSQL
 
 **** Cassandra
 
+
+***** Drivers
+
+****** Java
+
+******* [[https://github.com/datastax/java-driver][Official DataStax CQL Driver]]
+
+- [[http://www.datastax.com/documentation/developer/java-driver/1.0/webhelp/index.html][Documentation]]
+- [[http://www.datastax.com/drivers/java/apidocs/][API]]
+
+**** MongoDB
+
+** Data Structures
+*** Analysis
+**** Big O
+**** Analytic Combinatorics
+** Distributed Systems
+*** Akka
+*** Consensus
+*** Vector Clocks
 ** Denotational Semantics
 
 ** Emacs
+*** Elisp
+*** Packages
+**** Org-Mode
+**** Magit
+**** Haskell-Mode
+**** Yasnippet
+**** ido
+*** Tips & Tricks
 ** Emotionally Focused Therapy
 
 *** Links 
 
 - [[https://en.wikipedia.org/wiki/Emotionally_focused_therapy][on Wikipedia]]
 
-** Functional Programming 
+** Fault Tolerance
+*** Terms
 
+- failure :: When the delivered service no longer complies with the specification.  If there is no specification, there can be no failure. Failures are observed by the user of the system.  Failures are caused by errors.
+
+- error :: An incorrect system behavior that may cause a failure. Errors fall into two categories: timing and value.  Value errors can take the form of incorrect state or an incorrect discrete value. Errors can be detected before they cause failures.  Errors are the manifestation of faults.  The presence of errors implies the presence of faults.
+
+- fault :: a defect in a system that can cause an error.  Faults can be caused by incorrect requirements, coding defects, incorrect designs, etc.  A fault that is not causing any errors is latent.
+
+- latent :: A fault that is not causing any errors is latent.
+
+- active :: A fault that causes an error is active.
+
+- fail-silent :: a system that presents the correct result or no result at all.
+
+- crash-failure :: the system stops after it detects an error
+
+*** Bad Assumptions
+
+- Only one error occurs at a time
+- One error is recovered from  before the next one occurs
+- Each error is independent from each other error
+
+*** Fault -> Error -> Failure
+
+*** Books
+**** [[http://techbus.safaribooksonline.com/book/software-engineering-and-development/patterns/9780470319796][Patterns for Fault Tolerant Software]] by Robert S. Hanmer
+** Functional Programming 
 *** Lambda Calculus
 
+*** Functional Data Structures
 ** Information Theory
+   
+*** Entropy
+*** Compression
+** Learning
 
 ** Machine Learning
 
@@ -76,6 +163,8 @@ far I can get.
 
 **** Clustering
 
+*** Ensemble Methods
+*** Boosting
 *** Tools
 
 **** Weka
@@ -85,7 +174,7 @@ far I can get.
 - [[http://www.cs.waikato.ac.nz/ml/weka/][Home Page]]
 
 ** Mathematics
-
+*** Algebra
 *** Linear Algebra
 *** Discrete Math
 *** Abstract Algebra
@@ -93,16 +182,27 @@ far I can get.
 *** Statistics
 *** Distance Metrics
 *** Graph Theory
+*** Proofs
 
 ** Operating Systems
-
+*** Concepts
+**** Virtual Memory
+**** Devices
+**** Networking
+**** Security
+**** Troubleshooting
+**** Optimizing
 *** Linux
 
 *** FreeBSD
     
-** Programming Environment
+** Programming Environments
 
 *** Java Virtual Machine
+
+*** .NET Runtime
+
+I'm pretty much focusing on the JVM for now.
 
 ** Programming Languages
 
@@ -174,12 +274,22 @@ far I can get.
 **** IPython
 
 **** SciKit-Learn
+     
+*** Other
+**** Prolog
 
+**** ML
+**** Javascript
+** Software Architecture
 ** Ultra Learning
 
-*** Links [0%] [0/1]
+*** Links [66%] [2/3]
 
-**** TODO [[http://calnewport.com/blog/2012/10/26/mastering-linear-algebra-in-10-days-astounding-experiments-in-ultra-learning/][Interview with Scott Young]]
+**** TODO [[../res/scott_young.pdf][Scott's Book on Learning]]
+
+**** DONE [[http://www.scotthyoung.com/blog/2011/09/01/learn-faster/][The Feynman Technique]]
+
+**** DONE [[http://calnewport.com/blog/2012/10/26/mastering-linear-algebra-in-10-days-astounding-experiments-in-ultra-learning/][Interview with Scott Young]]
 
 The method you use to learn matters lot.  Deeper levels of processing
 can double your efficiency.
@@ -259,12 +369,36 @@ For formulas, you should seek to understand them not just memorize
 them.  If you see a formula you don't understand, break it down into
 parts and try to understand the parts.
 
+***** Developing Deeper Intuition
+
+Most intuitions are one of the following types:
+
+- Analogies - You notice a similarity between one thing and another
+  (easier to understand) idea.
+- Visulizations - making a mental picture of an abstract idea (even if its
+  incomplete) helps.
+- Simplifications - If you can explain something to your grandmother,
+  you really understand it.  Simplification is the strengthening of
+  connections between basic components and complex ideas.
+
+Once you feel you understand a concept see if you can use one of the
+above methods above to explain it.
+
 ** Version Control
 
 *** git
 
 ** Web Frameworks
+*** Client Side
+**** Angular JS
+*** Server Side
+**** Play!
 
-*** Play!
-  
-#+OPTIONS: toc:nil num:nil
+** Systems
+*** Links
+**** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
+** Simulations  
+
+
+
+#+OPTIONS: num:nil
