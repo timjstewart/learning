@@ -16,7 +16,6 @@ far I can get.
 
 *** Reinforcement Learning
 
-
 **** Terms
 
 - reward :: what the agent expects to receive in the short term for
@@ -61,9 +60,21 @@ far I can get.
 
 ** Machine Learning
 
+*** Links
+
+- [ ] [[http://www.kaggle.com/][Kaggle]]
+
 *** Supervised Learning
 
+
+**** Decision Trees
+
+**** Naive Bayesian Classifier
+
 *** Unsupervised Learning
+
+
+**** Clustering
 
 *** Tools
 
@@ -80,6 +91,8 @@ far I can get.
 *** Abstract Algebra
 *** Probability
 *** Statistics
+*** Distance Metrics
+*** Graph Theory
 
 ** Operating Systems
 
@@ -95,7 +108,21 @@ far I can get.
 
 *** Java
 
+**** Features
+
+***** NIO
+      
+***** Lambdas
+
+***** Concurrency
+
 *** Scala
+
+**** Macros
+
+**** Akka
+
+**** scalaz
 
 *** Haskell
 
@@ -134,7 +161,13 @@ far I can get.
   
 *** C++
 
+**** Lambda Expressions
+
+**** Concurrency
+
 *** Python
+
+**** Idioms
 
 **** Pandas
 
@@ -147,10 +180,13 @@ far I can get.
 *** Links [0%] [0/1]
 
 - [ ] [[http://calnewport.com/blog/2012/10/26/mastering-linear-algebra-in-10-days-astounding-experiments-in-ultra-learning/][Interview with Scott Young]]
+
 ** Version Control
 
 *** git
+
 ** Web Frameworks
+
 *** Play!
   
 #+OPTIONS: toc:nil num:nil
