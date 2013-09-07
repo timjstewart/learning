@@ -179,7 +179,85 @@ far I can get.
 
 *** Links [0%] [0/1]
 
-- [ ] [[http://calnewport.com/blog/2012/10/26/mastering-linear-algebra-in-10-days-astounding-experiments-in-ultra-learning/][Interview with Scott Young]]
+**** TODO [[http://calnewport.com/blog/2012/10/26/mastering-linear-algebra-in-10-days-astounding-experiments-in-ultra-learning/][Interview with Scott Young]]
+
+The method you use to learn matters lot.  Deeper levels of processing
+can double your efficiency.
+
+Cramming does not work at MIT; courses build on each other.
+
+Deepening Understanding is made up of two things:
+
+- Making Connections - connections provide context
+- Debugging Errors - make sure your understanding of a concept is
+  complete and correct.  As you debug, you're reviewing and
+  reinforcing the learning.
+
+***** Drill down Method
+
+****** Coverage
+
+Get a map of the terrain.  Get a general sense of what you need to
+learn.  This could mean watching lecture videos or reading textbooks.
+How about the syllabus?  This is the least efficient stage.  Watch
+videos at 1.5X or 2X speed.
+
+Don't highlight books.  Instead take sparse notes while reading or do
+a one paragraph summary after each major section.
+
+****** Practice 
+
+Practice problems are huge for boosting your understanding but there
+are two efficiency traps if you're not careful.
+
+- Not getting immediate feedback.  If you want to learn you need
+  immediate feedback.  The best way is to go question by question with
+  the answers in hand.  Finish a question and then check your answer.
+
+- Grinding Problems - Practice problems should be used to highlight
+  areas where you need to gain more understanding in.  See Feynman
+  Technique in a bit.
+
+So Scott is saying use Practice Problems but don't get bogged down in
+them.  If you get stuck, brush up on the area where you got stuck.
+
+****** Insight
+
+The goal of coverage and practice questions is to get you to the point
+where you know what you don't understand.  The Feynman Technique helps
+you fill in the gaps in your knowledge.
+
+***** The Feynman Technique
+
+Richard Feynman describes himself struggling with a hard research
+paper. His solution was to go meticulously through the supporting
+material until he understood everything that was required to
+understand the hard idea.
+
+In other words, divide and conquer.  Digest the big idea that you
+don't understand into little chunks that you can learn and understand
+and then work your way back up to the big idea.
+
+Steps:
+
+- Get a piece of paper
+- Write at the top the idea or process you want to understand.
+- Explain the idea as if you were teaching it to someone else.
+
+During step 3 youll get to a place where you can't explain something.
+That's the precise gap in your understanding tha tyou need to fill.
+Research the answer.  By narrowly defining your misunderstanding it
+becomes easier to find the precise answer.
+
+If you don't get the idea at all, copy the author's explanation but
+try to elaborate and clarify it yourself.
+
+For procedures explain each step, not only what it does but how to
+execute it, and perhaps why.
+
+For formulas, you should seek to understand them not just memorize
+them.  If you see a formula you don't understand, break it down into
+parts and try to understand the parts.
 
 ** Version Control
 
