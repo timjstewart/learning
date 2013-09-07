@@ -1,0 +1,147 @@
+#+TITLE: Learning
+
+* Introduction
+
+This project is an experiment.  I'd like to add a bit more structure
+to the things I know and the things I'm interested in learning about.
+Maybe a notebook would be better; maybe not.
+
+I'm not sure how I'm going to incorporate images and diagrams into
+this notebook (to make it a more visual experience) but we'll see how
+far I can get.
+
+* Topics
+
+** Artificial Intelligence
+
+*** Reinforcement Learning
+
+
+**** Terms
+
+- reward :: what the agent expects to receive in the short term for
+            taking a particular action.  May be negative (punishment)
+            or positive (actual reward).
+
+- value :: what the agent expects to receive in the long term by
+           executing its policy.
+
+*** Neural Networks
+
+*** Bayesian Networks
+
+** Cognitive Science
+
+*** Books
+
+**** "Brain Rules" by John Medina
+
+** Databases
+
+*** Relational
+
+*** NoSQL
+
+**** Cassandra
+
+** Denotational Semantics
+
+** Emacs
+** Emotionally Focused Therapy
+
+*** Links 
+
+- [[https://en.wikipedia.org/wiki/Emotionally_focused_therapy][on Wikipedia]]
+
+** Functional Programming 
+
+*** Lambda Calculus
+
+** Information Theory
+
+** Machine Learning
+
+*** Supervised Learning
+
+*** Unsupervised Learning
+
+** Mathematics
+
+*** Linear Algebra
+*** Discrete Math
+*** Abstract Algebra
+*** Probability
+*** Statistics
+
+** Operating Systems
+
+*** Linux
+
+*** FreeBSD
+    
+** Programming Environment
+
+*** Java Virtual Machine
+
+** Programming Languages
+
+*** Java
+
+*** Scala
+
+*** Haskell
+
+**** Links
+
+- [[http://www.haskell.org/haskellwiki/Haskell][Haskell Home Page]]
+- [[http://book.realworldhaskell.org/read/][Real World Haskell]]
+- [[http://learnyouahaskell.com/chapters][Learn You a Haskell]]
+- [[http://www.haskell.org/ghc/docs/latest/html/libraries/index.html][Libraries Documentation]]
+- [[http://themonadreader.wordpress.com/][The Monad.Reader]]
+- [[http://planet.haskell.org/][Planet Haskell]]
+
+**** To Read [0%] [0/14]
+
+- [ ] [[../res/yaht.pdf][Yet Another Haskell Tutorial]]
+- [ ] [[../res/HR.pdf][Haskell Road to Logic Math and Programming]]
+- [ ] [[http://en.wikibooks.org/wiki/Haskell][Haskell Wiki Book]] ([[../res/HaskellWikibook.pdf][PDF]])
+- [ ] [[http://www.haskell.org/haskellwiki/Hitchhikers_guide_to_Haskell][Hitchhiker's Guide to Haskell]]
+- [ ] [[../res/awkward-squad.pdf][Tackling the Awkward Squad]]
+- [ ] [[http://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours][Write Yourself a Scheme in 48 Hours]]
+- [ ] [[http://www.haskell.org/haskellwiki/Scrap_your_boilerplate][Scrap Your Boilerplate]]
+- [ ] [[../res/HPR.pdf][Higher-order + Polymorphic = Reuse]]
+- [ ] [[../res/whyfp.pdf][Why Functional Programming]]
+- [ ] [[../res/monads2arrows.pdf][Generalizing Monads to Arrows]]
+- [ ] [[../res/arrows_robots.pdf][Arrows, Robots, and FRP]]
+- [ ] [[../res/edsl.pdf][Building Domain-Specific Embedded Languages]]
+- [ ] [[../res/monad_interpreter.pdf][Build a Monadic Interpreter]]
+- [ ] [[http://www.haskell.org/haskellwiki/Category:Style][Haskell Style Wiki Category]]
+- [ ] [[http://www.haskell.org/haskellwiki/Emacs][Emacs & Haskell]]
+- [ ] [[http://www.haskell.org/haskellwiki/How_to_write_a_Haskell_program][How to Write a Haskell Program]]
+- [ ] [[http://www.haskell.org/ghc/docs/latest/html/users_guide/index.html][GHC/GHCI Manual]]
+- [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Functional_pearls][Functional Pearls]]
+- [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Data_structures][Research Papers on Data Structures]]
+- [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Top_10][Top Research Papers]]
+  
+*** C++
+
+*** Python
+
+**** Pandas
+
+**** IPython
+
+**** SciKit-Learn
+
+** Ultra Learning
+
+*** Links [0%] [0/1]
+
+- [ ] [[http://calnewport.com/blog/2012/10/26/mastering-linear-algebra-in-10-days-astounding-experiments-in-ultra-learning/][Interview with Scott Young]]
+** Version Control
+
+*** git
+** Web Frameworks
+*** Play!
+  
+#+OPTIONS: toc:nil num:nil
