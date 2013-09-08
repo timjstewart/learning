@@ -1,5 +1,4 @@
 #+TITLE: Learning
-
 * Introduction
 
 This project is an experiment.  I'd like to add a bit more structure
@@ -11,6 +10,8 @@ this notebook (to make it a more visual experience) but we'll see how
 far I can get.
 
 * Topics
+
+These are some of the topics I'm interested in learning more about.
 
 ** Artificial Intelligence
 
@@ -31,14 +32,206 @@ far I can get.
 
 *** Books
 **** "Artificial Intelligence, A Modern Approach" by Norvig, et al.
+
+*** Key Challenge of Artificial Intelligence
+
+To find out how to write programs that, to the extent possible,
+produce rational behavior from a small amount of code rather than a
+large number of table entries.
+
+*** Agent Types
+
+These agents types are defined in the terms section
+
+**** Simple Reflex Agent
+
+Pseudocode: [[../src/AI/SimpleReflexAgent.hs][Source Code]]
+
+**** Model Based Reflex Agent
+
+Pseudocode: [[../src/AI/ModelBasedAgent.hs][Source Code]]
+
+**** Goal-Based Agent
+
+Pseudocode: [[../src/AI/GoalBasedAgent.hs][Source Code]]
+
+**** Utility Based Agent
+
+Pseudocode: [[../src/AI/UtilityBasedAgent.hs][Source Code]]
+
+*** Task Environment 
+
+**** Fully Observable or Partially Observable
+
+If the agent can observe everything there is to know about the
+environment at all times, then the environment is fully observable,
+otherwise it's partially observable.
+
+**** Deterministic or Stochastic
+
+If the next state of the environment is completely defined by the
+current state of the environment and the next action of the agent,
+then it is a deterministic environment.  See: strategic.
+
+**** Episodic or Sequential
+
+An environment is episodic when the agent acquires a percept, then
+takes a single action based on the updated percept sequence.  This
+process then repeats.  Importantly the next episode does not depend on
+the actions taken during any previous episode.  Sounds like a Markov
+Chain.  An example is detecting defects in a product on an assembly
+line.
+
+In a sequential environment the current decision can affect all future
+decisions.  Some examples would be chess and taxi driving.
+
+**** Static or Dynamic
+
+If the environment can change while the agent is thinking then the
+environment is dynamic.  If the environment is dynamic and it's
+changing faster than the agent can decide what to do, the agent does
+nothing.
+
+If, in a static environment, the only thing that changes is the
+agent's performance measure the environment is semidynamic.
+
+**** Discrete or Continuous
+
+Discreteness can be applied to several aspects of the task environment.
+
+- Time - whether time passes in a continuous nature or not
+
+- Percepts - the percepts the agent collects may be discrete or
+  continuous.
+
+- Actions - the actions that the agent takes may be discrete or
+  continuous
+
+- States - whether or not there are a finite number of states.
+
+**** Single Agent or Multi Agent
+
+Multiagent environments can be cooperative or competitive.
+
+*** Terms
+ 
+- agent :: something that perceives its environment using one or more
+           sensors and acts upon its environment using one or more
+           actuators.  An agent is a combination of the agent
+           architecture and an agent program.
+
+- agent architecture :: computing device with physical sensors and
+     actuators.
+
+- agent function :: a function that maps different percept sequences
+                    to actions.  The agent function is computed at
+                    three distinct times: when it is being designed,
+                    when an action is being deliberated, and when the
+                    agent learns, the agent function computes how to
+                    modify the agent's behavior.
+
+- agent program :: software that implements the agent function mapping
+                   percepts into actions.
+
+- actuator :: a way in which the agent interacts with its environment
+              (e.g. robotic hands, computer display, etc.)
+
+- condition-action rule :: A rule that states when a specific
+     condition becomes true, a specific action should be taken.
+
+- exploration :: an example of information gathering, often done to
+                 gain information about an unfamiliar environment.
+
+- goal-based agent :: an agent that has information about the goal it
+     should acheive and is programmed to analyze the goal, and its
+     model of the environment (if it's available) in order to select
+     actions.  Sometimes goal-based action selection is easy (when the
+     goal can be acheived in a single action).  Sometimes goal-based
+     action selection is more tricky.  In these cases planning and
+     search techniques can be used.  Goal-based agents are more
+     flexible than agents that follow condition-action rules because
+     the knowledge that supports its decisions is represented
+     explicitly and can be updated.
+
+- information gathering :: actions taken to modify futur percepts,
+     often done by rational agents to increase their expected
+     performance.
+
+- model :: information on how the world evolves independently of the
+           agent's actions and how the agent's actions affect the
+           world.  Combined these two information sets states "How the
+           World Works" according to the agent.
+
+- model-based reflex agent :: this agent keeps track of what it has
+     observed in some internal state.  Updating this internal state
+     requires two kinds of knowledge: 1) how the world evolves
+     independently of the agent and 2) how the agent's actions affect
+     the world.  Giving a simple reflex agent the ability to maintain
+     and update state is the most effective way of handling partial
+     observability.
+
+- percept :: an agent's perceptual inputs at a given point in time.
+
+- percept sequence :: the complete history of the agents observations
+     (percepts).
+
+- performance measure :: embodies the success criteria for the success
+     of the agent.  It is better to derive the performance measures
+     from what you actually want and not how you want the agent to
+     behave.
+
+- rational agent :: an agent that always does the right thing Ivery
+                    entry in the agent's table contains an action that
+                    maximizes the agent' success.  A rational agent is
+                    not a perfect agent.  Rationality maximizes
+                    expected performance not actual performance.
+
+- sensor :: A senor collects data, measurements, stimulus from the
+            agent's environment.
+
+- simple reflex agent :: an agent that selects its next action based
+     entirely on the current percept, ignoring all previous percepts.
+     These agents are simple but they are of limited intelligence.
+     Even a little bit of limited observability can cause the simple
+     reflex agent a lot of problems because they may ignore crucial
+     information.  They are subject to infinte loops (oscilating
+     between two states) but these loops can be broken out of by
+     adding some randomness to the agent's agent function.
+
+- strategic :: where the next state of the environment deterministic
+               except for the actions of other agents.
+
+- task environment :: the problem to which the agent is the solution.
+     It is comprised of PEAS (Performance Measure, Environment,
+     Actuators, and Sensors).
+
+- utility-based agent :: An agent that uses a utility function to
+     select its actions.  Goals alone are insufficient to produce
+     high-quality behavior in most environments.  Goals can be in
+     conflict.
+
+- utility function :: A function maps a state (or sequence of states)
+     to a number.  A utility function can help address the problem of
+     conflicting goals (speed vs. safety).  When their are multiple
+     goals, the agent can use the utility function to weigh expected
+     performance of acheiving the goal against the likelihood of
+     acheiving each goal.
+
+*** Source Code
+
+- [[../src/AI/Agent.hs][Agent.hs]]
+
 ** Big Data
 *** Hadoop
 *** Cascading
 ** Cognitive Science
-
 *** Books
 
 **** "Brain Rules" by John Medina
+
+**** "Now you See It" by Cathy Davidson
+
+[[http://www.amazon.com/Now-You-See-Attention-Transform/dp/0670022829][On Amazon]]
 
 ** Computer Architecture
 *** Memory Hierarchy
@@ -54,6 +247,43 @@ far I can get.
 **** Interconnect
 **** Load/Store Buffers
 **** Write Absorbtion
+
+**** Times for Common Operations
+
+Sources: [[http://surana.wordpress.com/2009/01/01/numbers-everyone-should-know/][Surana]], [[https://docs.google.com/viewer?url%3Dhttp%253A%252F%252Fsoftware.intel.com%252Fsites%252Fproducts%252Fcollateral%252Fhpc%252Fvtune%252Fperformance_analysis_guide.pdf][Intel]], [[http://norvig.com/21-days.html#answers][Peter Norvig]]
+
+|-------------------------------------+------------------------+------------------+--------|
+| Operation                           | Time (nanoseconds) <r> |   Alternate Unit | Cycles |
+|-------------------------------------+------------------------+------------------+--------|
+| <l>                                 |                    <r> |              <r> |    <r> |
+| L1 cache reference                  |                 0.5 ns |                  |     ~4 |
+| Exeute Instruction                  |                   1 ns |                  |        |
+| Branch mispredict                   |                   5 ns |                  |        |
+| L2 cache reference                  |                   7 ns |                  |    ~10 |
+| Mutex lock/unlock                   |              25-100 ns |                  |        |
+| Main memory reference               |                 100 ns |                  |        |
+| Compress 1K bytes with Zippy        |              10,000 ns |  10 microseconds |        |
+| Send 2K bytes over 1 Gbps network   |              20,000 ns |  20 microseconds |        |
+| Read 1 MB sequentially from memory  |             250,000 ns | 250 microseconds |        |
+| Round trip within same datacenter   |             500,000 ns | 500 microseconds |        |
+| Fetch from new disk location (seek) |           8,000,000 ns |          8 msecs |        |
+| Read 1 MB sequentially from network |          10,000,000 ns |         10 msecs |        |
+| Read 1 MB sequentially from disk    |          20,000,000 ns |         20 msecs |        |
+| Send packet CA->Netherlands->CA     |         150,000,000 ns |        150 msecs |        |
+|-------------------------------------+------------------------+------------------+--------|
+
+Other Metrics Of Interest
+
+|------------------------------------------+----------------------|
+| Metric                                   |                Value |
+|------------------------------------------+----------------------|
+| <l>                                      |                  <r> |
+| Speed of Light                           | 186,000 miles/second |
+| Circumference of Earth                   |         40,000 miles |
+| Maximum Transmission Distance (on Earth) |         20,000 miles |
+| Width of United States                   |          2,770 miles |
+|------------------------------------------+----------------------|
+
 *** Central Processing Unit
 *** Networking
 *** CUDA
@@ -70,7 +300,6 @@ far I can get.
 *** NoSQL
 
 **** Cassandra
-
 
 ***** Drivers
 
@@ -97,6 +326,138 @@ far I can get.
 *** Elisp
 *** Packages
 **** Org-Mode
+***** LaTeX
+****** Examples
+
+- Summation - \sum x
+- \exist x \rarr x = 0
+- \forall x \rarr x \gt x
+- 4 \div 2 =div  =  2
+- \pi
+
+****** Arrows
+
+\Leftarrow (Leftarrow)      
+\Leftrightarrow (Leftrightarrow)                                      
+\Rightarrow (Rightarrow)          
+\downarrow (downarrow)                                                                                                      
+\hArr (hArr)                                                                                      
+\harr (harr)                                                                                                                
+\lArr (lArr)                
+\uparrow (uparrow)        
+\larr (larr)                      
+\leftarrow (leftarrow)            
+\leftrightarrow (leftrightarrow)    
+\rArr (rArr)                
+\rarr (rarr)                      
+\rightarrow (rightarrow)                                      
+
+****** Uncategorized 
+
+\amp (amp)                                            
+\approx (approx)                                                      
+\because (because)                                                                                
+\bullet (bullet)            
+\cap (cap)                                                            
+\cdots (cdots)                                                                                    
+\circ (circ)                        
+\colon (colon)              
+\cong (cong)                                                          
+\cup (cup)                          
+\deg (deg)                          
+\div (div)                  
+\dots (dots)                                                          
+\emptyset (emptyset)              
+\equal (equal)                    
+\equiv (equiv)                      
+\exists (exists)            
+\exp (exp)                        
+\fnof (fnof)                        
+\forall (forall)          
+\frac12 (frac12)            
+\frac14 (frac14)                  
+\frac34 (frac34)                    
+\frown (frown)              
+\geq (geq)                  
+\gets (gets)                                                          
+\gt (gt)                  
+\hellip (hellip)          
+\in (in)                    
+\infty (infty)            
+\int (int)                                                                                        
+\isin (isin)                                          
+\lambda (lambda)                  
+\land (land)                        
+\lang (lang)              
+\laquo (laquo)              
+\le (le)                    
+\leq (leq)                                            
+\lg (lg)                                                                                                                    
+\ln (ln)                  
+\log (log)                                                                                        
+\lor (lor)                                            
+\lrm (lrm)                          
+\lsquo (lsquo)              
+\lt (lt)                          
+\max (max)                                            
+\micro (micro)                      
+\middot (middot)          
+\minus (minus)                    
+\ne (ne)                            
+\neg (neg)                
+\neq (neq)                  
+\ni (ni)                  
+\not (not)                  
+\notin (notin)                    
+\nsub (nsub)                        
+\nsup (nsup)                                                                                                                
+\oplus (oplus)                      
+\otimes (otimes)                                      
+\partial (partial)                  
+\perp (perp)              
+\pi (pi)                                                              
+\plus (plus)                
+\plusmn (plusmn)                  
+\prec (prec)                
+\preccurlyeq (preccurlyeq)        
+\preceq (preceq)                    
+\prime (prime)            
+\prod (prod)                
+\radic (radic)                                                        
+\rang (rang)              
+\raquo (raquo)              
+\real (real)                                                  
+\rsaquo (rsaquo)                    
+\rsquo (rsquo)                                                                                                              
+\sdot (sdot)                                          
+\setminus (setminus)                
+\sim (sim)                          
+\simeq (simeq)            
+\sin (sin)                  
+\sinh (sinh)                      
+\slash (slash)                      
+\sub (sub)                  
+\sube (sube)                      
+\subset (subset)                    
+\succ (succ)              
+\succcurlyeq (succcurlyeq)  
+\succeq (succeq)                  
+\sum (sum)                          
+\sup (sup)                
+\sup1 (sup1)                
+\sup2 (sup2)                      
+\sup3 (sup3)                        
+\supe (supe)              
+\supset (supset)                                              
+\tan (tan)                          
+\therefore (therefore)                                                                            
+\theta (theta)                                                                                                              
+\tilde (tilde)            
+\times (times)              
+\to (to)                          
+\triangleq (triangleq)    
+\varepsilon (varepsilon)                                                                                                    
+
 **** Magit
 **** Haskell-Mode
 **** Yasnippet
@@ -177,6 +538,12 @@ far I can get.
 *** Algebra
 *** Linear Algebra
 *** Discrete Math
+**** Books
+***** "Concrete Mathematics" by Donald Knuth, et al.
+*** Euler's Constant
+*** Causality
+**** Books
+***** "Causality" by Judea Pearl
 *** Abstract Algebra
 *** Probability
 *** Statistics
@@ -259,11 +626,20 @@ I'm pretty much focusing on the JVM for now.
 - [ ] [[http://www.haskell.org/haskellwiki/Research_papers/Top_10][Top Research Papers]]
 - [ ] [[http://www.scs.stanford.edu/11au-cs240h/notes/][Lecture Notes from Stanford's Haskell Course]]
   
+**** Concurrency
+**** Arrows
+**** Monoids
+**** MonadPlus
+**** Lenses
+
 *** C++
 
 **** Lambda Expressions
 
 **** Concurrency
+     
+**** Concepts (next version)
+**** Templates
 
 *** Python
 
@@ -275,10 +651,15 @@ I'm pretty much focusing on the JVM for now.
 
 **** SciKit-Learn
      
+**** Generators
+**** The with keyword
+
 *** Other
 **** Prolog
-
+***** Difference Lists
+***** Natural Language Processing
 **** ML
+***** Side-Effects
 **** Javascript
 ** Software Architecture
 ** Ultra Learning
