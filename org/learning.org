@@ -59,6 +59,20 @@ Pseudocode: [[../src/AI/GoalBasedAgent.hs][Source Code]]
 
 Pseudocode: [[../src/AI/UtilityBasedAgent.hs][Source Code]]
 
+*** Learning Agent
+
+See Figure 2.15 on page 53
+
+A learning agent has four conceptual components (defined further in terms section):
+
+- Learning Element
+
+- Critic
+
+- Problem Generator
+
+- Performance Element
+
 *** Task Environment 
 
 **** Fully Observable or Partially Observable
@@ -136,6 +150,13 @@ Multiagent environments can be cooperative or competitive.
 - actuator :: a way in which the agent interacts with its environment
               (e.g. robotic hands, computer display, etc.)
 
+- critic :: a component of a learning agent that provides input on how
+            well the agent is doing based on a fixed performance
+            standard and determines how the performance element should
+            be modified to do better in the future.  The standard used
+            for critiquing actions must be fixed (i.e. the agent
+            should not modify its critic to influence its behavior).
+
 - condition-action rule :: A rule that states when a specific
      condition becomes true, a specific action should be taken.
 
@@ -157,6 +178,9 @@ Multiagent environments can be cooperative or competitive.
      often done by rational agents to increase their expected
      performance.
 
+- learning element :: a component of a learning agent that is
+     responsible for making improvements
+
 - model :: information on how the world evolves independently of the
            agent's actions and how the agent's actions affect the
            world.  Combined these two information sets states "How the
@@ -175,10 +199,21 @@ Multiagent environments can be cooperative or competitive.
 - percept sequence :: the complete history of the agents observations
      (percepts).
 
+- performance element :: a component of a learning agent that is
+     responsible for selecting external actions.  The perforance
+     element is what we have previously thought of as the whole agent.
+     It's as if a learning agent is a regular agent along with some
+     additional elements.  It takes percepts and decides actions.
+
 - performance measure :: embodies the success criteria for the success
      of the agent.  It is better to derive the performance measures
      from what you actually want and not how you want the agent to
      behave.
+
+- problem generator :: a component of a learning agent that suggests
+     actions that will lead to new and informative experiences.  Helps
+     the agent explore and avoid a potentially sub-optimal, greedy
+     solution.
 
 - rational agent :: an agent that always does the right thing Ivery
                     entry in the agent's table contains an action that
