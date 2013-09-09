@@ -45,19 +45,19 @@ These agents types are defined in the terms section
 
 **** Simple Reflex Agent
 
-Pseudocode: [[../src/AI/SimpleReflexAgent.hs][Source Code]]
+Pseudocode: [[./SimpleReflexAgent.hs][Source Code]]
 
 **** Model Based Reflex Agent
 
-Pseudocode: [[../src/AI/ModelBasedAgent.hs][Source Code]]
+Pseudocode: [[./ModelBasedAgent.hs][Source Code]]
 
 **** Goal-Based Agent
 
-Pseudocode: [[../src/AI/GoalBasedAgent.hs][Source Code]]
+Pseudocode: [[./GoalBasedAgent.hs][Source Code]]
 
 **** Utility Based Agent
 
-Pseudocode: [[../src/AI/UtilityBasedAgent.hs][Source Code]]
+Pseudocode: [[./UtilityBasedAgent.hs][Source Code]]
 
 *** Learning Agent
 
@@ -254,7 +254,7 @@ Multiagent environments can be cooperative or competitive.
 
 *** Source Code
 
-- [[../src/AI/Agent.hs][Agent.hs]]
+- [[./Agent.hs][Agent.hs]]
 
 ** Big Data
 *** Hadoop
@@ -639,19 +639,19 @@ I'm pretty much focusing on the JVM for now.
 
 **** To Read [0%] [0/14]
 
-- [ ] [[../res/yaht.pdf][Yet Another Haskell Tutorial]]
-- [ ] [[../res/HR.pdf][Haskell Road to Logic Math and Programming]]
-- [ ] [[http://en.wikibooks.org/wiki/Haskell][Haskell Wiki Book]] ([[../res/HaskellWikibook.pdf][PDF]])
+- [ ] [[./yaht.pdf][Yet Another Haskell Tutorial]]
+- [ ] [[./HR.pdf][Haskell Road to Logic Math and Programming]]
+- [ ] [[http://en.wikibooks.org/wiki/Haskell][Haskell Wiki Book]] ([[./HaskellWikibook.pdf][PDF]])
 - [ ] [[http://www.haskell.org/haskellwiki/Hitchhikers_guide_to_Haskell][Hitchhiker's Guide to Haskell]]
-- [ ] [[../res/awkward-squad.pdf][Tackling the Awkward Squad]]
+- [ ] [[./awkward-squad.pdf][Tackling the Awkward Squad]]
 - [ ] [[http://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours][Write Yourself a Scheme in 48 Hours]]
 - [ ] [[http://www.haskell.org/haskellwiki/Scrap_your_boilerplate][Scrap Your Boilerplate]]
-- [ ] [[../res/HPR.pdf][Higher-order + Polymorphic = Reuse]]
-- [ ] [[../res/whyfp.pdf][Why Functional Programming]]
-- [ ] [[../res/monads2arrows.pdf][Generalizing Monads to Arrows]]
-- [ ] [[../res/arrows_robots.pdf][Arrows, Robots, and FRP]]
-- [ ] [[../res/edsl.pdf][Building Domain-Specific Embedded Languages]]
-- [ ] [[../res/monad_interpreter.pdf][Build a Monadic Interpreter]]
+- [ ] [[./HPR.pdf][Higher-order + Polymorphic = Reuse]]
+- [ ] [[./whyfp.pdf][Why Functional Programming]]
+- [ ] [[./monads2arrows.pdf][Generalizing Monads to Arrows]]
+- [ ] [[./arrows_robots.pdf][Arrows, Robots, and FRP]]
+- [ ] [[./edsl.pdf][Building Domain-Specific Embedded Languages]]
+- [ ] [[./monad_interpreter.pdf][Build a Monadic Interpreter]]
 - [ ] [[http://www.haskell.org/haskellwiki/Category:Style][Haskell Style Wiki Category]]
 - [ ] [[http://www.haskell.org/haskellwiki/Emacs][Emacs & Haskell]]
 - [ ] [[http://www.haskell.org/haskellwiki/How_to_write_a_Haskell_program][How to Write a Haskell Program]]
@@ -701,7 +701,7 @@ I'm pretty much focusing on the JVM for now.
 
 *** Links [66%] [2/3]
 
-**** TODO [[../res/scott_young.pdf][Scott's Book on Learning]]
+**** TODO [[./scott_young.pdf][Scott's Book on Learning]]
 
 **** DONE [[http://www.scotthyoung.com/blog/2011/09/01/learn-faster/][The Feynman Technique]]
 
