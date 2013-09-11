@@ -822,6 +822,27 @@ I'm pretty much focusing on the JVM for now.
 ***** Side-Effects
 **** Javascript
 ** Software Architecture
+** Testing
+*** Test Driven Development
+**** EasyMock
+***** Links
+
+- [[http://www.easymock.org/EasyMock3_1_Documentation.html][Documentation]]
+
+- [[http://www.easymock.org/api/easymock/3.1/index.html][JavaDocs]] ([[http://www.easymock.org/api/easymock/3.1/index.html][expect]])
+
+***** Expect
+
+Some commonly used expectations:
+
+- andReturn(T value) 
+- andThrow(Throwable throwable) 
+- anyTimes() 
+- atLeastOnce() 
+- once() 
+- times(int count) 
+
+*** Behavior Driven Development
 ** Ultra Learning
 
 *** Links [66%] [2/3]
