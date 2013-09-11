@@ -815,6 +815,4 @@ above methods above to explain it.
 **** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
 ** Simulations  
 
-
-
 #+OPTIONS: num:nil
