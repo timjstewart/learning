@@ -38,6 +38,7 @@ These are some of the topics I'm interested in learning more about.
 *** Bayesian Networks
 
 *** Books
+
 **** "Artificial Intelligence, A Modern Approach" by Norvig, et al.
 
 *** Key Challenge of Artificial Intelligence
@@ -264,9 +265,13 @@ Multiagent environments can be cooperative or competitive.
 - [[./Agent.hs][Agent.hs]]
 
 ** Big Data
+
 *** Hadoop
+
 *** Cascading
+
 ** Cognitive Science
+
 *** Books
 
 **** "Brain Rules" by John Medina
@@ -276,7 +281,13 @@ Multiagent environments can be cooperative or competitive.
 [[http://www.amazon.com/Now-You-See-Attention-Transform/dp/0670022829][On Amazon]]
 
 ** Computer Architecture
+
+*** Links [0/1]
+
+- [ ] [[https://en.wikipedia.org/wiki/Flynn%2527s_taxonomy][Flynn's Taxonomy]] - a classification of computer architectures (e.g. Single Instruction, Single Data Stream (SISD))
+
 *** Memory Hierarchy
+
 **** Registers
 **** L1 Cache
 **** L2 Cache
@@ -327,16 +338,23 @@ Other Metrics Of Interest
 |------------------------------------------+----------------------|
 
 *** Central Processing Unit
+
 *** Networking
+
 *** CUDA
+
 *** Storage Drives
+
 **** SSD
+
 **** Hard Drive (Rotating)
+
 ** Databases
 
 *** Relational
 
 **** MySQL
+
 **** PostgreSQL
 
 *** NoSQL
@@ -355,18 +373,35 @@ Other Metrics Of Interest
 **** MongoDB
 
 ** Data Structures
+
 *** Analysis
+
 **** Big O
+
 **** Analytic Combinatorics
-** Distributed Systems
+
+** Distributed Computing
+
+*** Links [0%]
+
+- [ ] [[https://en.wikipedia.org/wiki/CAP_theorem][CAP Theorem]]
+- [ ] [[https://en.wikipedia.org/wiki/Edsger_W._Dijkstra_Prize_in_Distributed_Computing][Dijkstra Prize in Distributed Computing]]
+- [ ] [[https://en.wikipedia.org/wiki/Gossip_protocol][Gossip Protocol (Wikipedia)]]
+- [ ] [[https://en.wikipedia.org/wiki/Paxos_algorithm][Paxos (Wikipedia)]]
+- [ ] [[https://en.wikipedia.org/wiki/Category:Distributed_computing][Wiki Category]]
+
 *** Akka
 
 Has its own section under [[Scala]].
 
 *** Consensus
+
 *** Vector Clocks
+
 ** Denotational Semantics
+
 *** People
+
 **** Conal Elliot
 
 [[http://conal.net/][Home Page]]
@@ -519,6 +554,7 @@ Has its own section under [[Scala]].
 - [[https://en.wikipedia.org/wiki/Emotionally_focused_therapy][on Wikipedia]]
 
 ** Fault Tolerance
+
 *** Terms
 
 - failure :: When the delivered service no longer complies with the specification.  If there is no specification, there can be no failure. Failures are observed by the user of the system.  Failures are caused by errors.
@@ -537,22 +573,33 @@ Has its own section under [[Scala]].
 
 *** Bad Assumptions
 
-- Only one error occurs at a time
-- One error is recovered from  before the next one occurs
-- Each error is independent from each other error
+- Only one error occurs at a time - multiple errors can occur at the
+  same time.  In a large enough system, it's almost a guarantee that
+  multiple errors will happen at the same time.
+
+- One error is recovered from the next one occurs - recovery from one
+  error can overlap the activation of another fault.
+
+- Each error is independent from each other error - errors can cascade
 
 *** Fault -> Error -> Failure
 
-*** Books
-**** [[http://techbus.safaribooksonline.com/book/software-engineering-and-development/patterns/9780470319796][Patterns for Fault Tolerant Software]] by Robert S. Hanmer
+*** Books [0/1]
+
+- [ ] [[http://techbus.safaribooksonline.com/book/software-engineering-and-development/patterns/9780470319796][Patterns for Fault Tolerant Software]] by Robert S. Hanmer
+
 ** Functional Programming 
+
 *** Lambda Calculus
 
 *** Functional Data Structures
+
 ** Information Theory
    
 *** Entropy
+
 *** Compression
+
 ** Learning
 
 ** Machine Learning
