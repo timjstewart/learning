@@ -9,6 +9,13 @@ I'm not sure how I'm going to incorporate images and diagrams into
 this notebook (to make it a more visual experience) but we'll see how
 far I can get.
 
+* Viewing on GitHub
+
+I have not researched how to make all the links that work just fine in
+org-mode in Emacs work at all on GitHub.  To best view this document,
+clone this repo and open learning.org in Emacs (assuming you have
+org-mode installed).
+
 * Topics
 
 These are some of the topics I'm interested in learning more about.
@@ -353,9 +360,16 @@ Other Metrics Of Interest
 **** Analytic Combinatorics
 ** Distributed Systems
 *** Akka
+
+Has its own section under [[Scala]].
+
 *** Consensus
 *** Vector Clocks
 ** Denotational Semantics
+*** People
+**** Conal Elliot
+
+[[http://conal.net/][Home Page]]
 
 ** Emacs
 *** Elisp
@@ -606,10 +620,11 @@ Other Metrics Of Interest
 
 I'm pretty much focusing on the JVM for now.
 
+
 ** Programming Languages
 
 *** Java
-
+    
 **** Features
 
 ***** NIO
@@ -618,11 +633,74 @@ I'm pretty much focusing on the JVM for now.
 
 ***** Concurrency
 
+
+**** Tools
+
+***** Maven
+
+****** Build Life Cycle
+
+- default :: handles project deployment
+
+- clean :: handles cleaning of your project
+
+- site :: handles creation of your project's site documentation
+
+****** Phases of the default lifecycle
+
+- validate :: validate the project is correct and all necessary
+              information is available
+
+- compile :: compile the source code of the project
+
+- test :: test the compiled source code using a suitable unit testing
+          framework. These tests /should not require the code be
+          packaged/ or deployed
+
+- package :: take the compiled code and package it in its
+             distributable format, such as a JAR.
+
+- integration-test :: process and deploy the package if necessary into
+     an environment where integration tests can be run
+
+- verify :: run any checks to verify the package is valid and meets
+            quality criteria
+
+- install :: install the package into the local repository, for use as
+             a dependency in other projects locally
+
+- deploy :: done in an integration or release environment, copies the
+            final package to the remote repository for sharing with
+            other developers and projects.
+
+****** Links
+
+- [[https://maven.apache.org/guides/index.html][Documentation]]
+
 *** Scala
+
+**** Links
+
+- [[http://docs.scala-lang.org/][Home Page]]
+- [[http://www.scala-lang.org/api/current/#package][ScalaDocs (Current)]]
 
 **** Macros
 
-**** Akka
+**** *Akka
+
+***** Links 
+
+- [[http://akka.io][Home Page]]
+
+- [[http://doc.akka.io/docs/akka/2.2.1/scala.html][Scala Documentation]]
+
+- [[http://doc.akka.io/api/akka/2.2.1/][ScalaDocs]]
+
+***** Concepts
+
+- Actor System :: a hierarchical group of actors which share common
+                  configuration.  It is also used for looking up
+                  actors.
 
 **** scalaz
 
@@ -816,3 +894,4 @@ above methods above to explain it.
 ** Simulations  
 
 #+OPTIONS: num:nil
+
