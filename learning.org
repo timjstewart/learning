@@ -9,6 +9,13 @@ I'm not sure how I'm going to incorporate images and diagrams into
 this notebook (to make it a more visual experience) but we'll see how
 far I can get.
 
+* Viewing on GitHub
+
+I have not researched how to make all the links that work just fine in
+org-mode in Emacs work at all on GitHub.  To best view this document,
+clone this repo and open learning.org in Emacs (assuming you have
+org-mode installed).
+
 * Topics
 
 These are some of the topics I'm interested in learning more about.
