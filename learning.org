@@ -282,24 +282,60 @@ Multiagent environments can be cooperative or competitive.
 
 ** Computer Architecture
 
-*** Links [0/1]
+*** Links [1/1]
 
-- [ ] [[https://en.wikipedia.org/wiki/Flynn%2527s_taxonomy][Flynn's Taxonomy]] - a classification of computer architectures (e.g. Single Instruction, Single Data Stream (SISD))
+- [X] [[https://en.wikipedia.org/wiki/Flynn%2527s_taxonomy][Flynn's Taxonomy]] - a classification of computer architectures
+  (e.g. Single Instruction, Single Data Stream (SISD)).  I get the
+  impression that all of the modern Intel chips (i3, i5, i7) and
+  perhaps some previous models are MIMD.
 
 *** Memory Hierarchy
 
-**** Registers
-**** L1 Cache
-**** L2 Cache
-**** L3 Cache
-**** Main Memory
-**** Disk
-**** Network
-**** NUMA
-**** MESI Protocol
-**** Interconnect
-**** Load/Store Buffers
-**** Write Absorbtion
+**** Terms
+
+- stall :: when a CPU must wait for a cache line to be filled from
+           main memory.
+
+**** References:
+
+- [[http://en.wikipedia.org/wiki/CPU_cache#Multi-core_chips][CPU Cache (Wikipedia)]]
+
+**** Components
+
+***** Registers
+
+Intel 64 bit Architectures have 16 general purpose registers when in
+64 bit mode.  [[http://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-1-manual.pdf][Source]]
+
+***** L1 Cache 
+
+Typically 1 L1 cache per core
+
+***** L2 Cache 
+
+Typically shared by two cores
+
+***** L3 Cache 
+
+Typically shared across all cores
+
+***** Main Memory
+
+***** Disk
+
+***** Network
+
+**** Concepts
+
+***** Cache Line
+
+Typically 64 bytes
+
+***** NUMA
+***** MESI Protocol
+***** Interconnect
+***** Load/Store Buffers
+***** Write Absorbtion
 
 **** Times for Common Operations
 
@@ -745,9 +781,80 @@ I'm pretty much focusing on the JVM for now.
 
 ***** Concepts
 
-- Actor System :: a hierarchical group of actors which share common
+- Actor :: Every actor has one supervisor which is the actor that
+           created it. ([[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]) What about the top level actor?  It
+           either has no supervisor or it wasn't created by an actor.
+           In akka an actor is about 300 bytes.
+
+- Actor Path :: a hierarchical name that refers to actors anchored by
+                an ActorSystem.  Local paths start with "akka://".
+                Remote paths start with something like
+                "akka.tcp://system@host:port".  "akka.udp" is also
+                available.
+
+- Actor system :: a hierarchical group of actors which share common
                   configuration.  It is also used for looking up
-                  actors.
+                  actors.  They are heavyweight so create one per
+                  logical application.
+
+- Ask :: The '?' operator initiates an ask operation.  Ask waits for a
+         response and as such incurs greater overhead.
+
+- Divide and Conquer :: Tasks are split up and delegated to the point
+     that they are of a manageable size.
+
+- Error Kernel :: [[http://www.erlang.se/doc/programming_rules.shtml#HDR15][Source]] The part of the system that must be correct.
+                  All other parts can be incorrect and should be
+                  restarted when the incorrectness is identified.
+
+- Failure :: If an actor cannot respond to a message, it bubbles the
+             error up to its supervisor.
+
+- Message Delivery Guarantees :: Akka makes two guarantees: 1)
+     at-most-once delivery (i.e. no guaranteed delivery) and 2)
+     message ordering per sender–receiver pair ([[http://doc.akka.io/docs/akka/2.2.1/general/message-delivery-guarantees.html#message-delivery-guarantees][Source]]).
+
+- Tell :: Sending a fire-and-forget message to another actor.  The
+          sending actor's reference is implicitly sent along with the
+          message.  The '!' operator initiates a tell operation.  Tell
+          is more performant and scalable because there is no need to
+          wait for a response (using a Future).  Compare with Ask.
+
+***** Supervision Guidelines
+
+
+[[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]
+
+- If an actor sends sub tasks to another actor, the sending actor
+  should supervise the other actor.
+
+- If an actor maintains some important state, it should source out any
+  dangerous tasks to other actors so that that it can be alerted to
+  failures without dying itself (and losing the data).
+
+- If one actor depends on another for carrying out its duty, it should
+  watch that actor and respond to its termination.  Watching is not
+  the same as supervision.
+
+***** Actor Best Practices
+
+
+[[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]
+
+- Actors should not block
+
+- Don't pass mutable objects between actors
+
+- Don't send behavior (e.g. closures) in messages
+
+- Top-level actors are the innermost part of your error kernel so
+  create them sparingly and hierarchically.
+
+- If an actor must block consider doing so from within a set of actors
+  managed by a router.
+
+
+
 
 **** scalaz
 
