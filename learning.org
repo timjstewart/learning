@@ -9,12 +9,14 @@ I'm not sure how I'm going to incorporate images and diagrams into
 this notebook (to make it a more visual experience) but we'll see how
 far I can get.
 
+
 * Viewing on GitHub
 
 I have not researched how to make all the links that work just fine in
 org-mode in Emacs work at all on GitHub.  To best view this document,
 clone this repo and open learning.org in Emacs (assuming you have
 org-mode installed).
+
 
 * Topics
 
@@ -264,11 +266,13 @@ Multiagent environments can be cooperative or competitive.
 
 - [[./Agent.hs][Agent.hs]]
 
+
 ** Big Data
 
 *** Hadoop
 
 *** Cascading
+
 
 ** Cognitive Science
 
@@ -276,9 +280,11 @@ Multiagent environments can be cooperative or competitive.
 
 **** "Brain Rules" by John Medina
 
+
 **** "Now you See It" by Cathy Davidson
 
 [[http://www.amazon.com/Now-You-See-Attention-Transform/dp/0670022829][On Amazon]]
+
 
 ** Computer Architecture
 
@@ -373,17 +379,22 @@ Other Metrics Of Interest
 | Width of United States                   |          2,770 miles |
 |------------------------------------------+----------------------|
 
+
 *** Central Processing Unit
+
 
 *** Networking
 
+
 *** CUDA
+
 
 *** Storage Drives
 
 **** SSD
 
 **** Hard Drive (Rotating)
+
 
 ** Databases
 
@@ -408,6 +419,7 @@ Other Metrics Of Interest
 
 **** MongoDB
 
+
 ** Data Structures
 
 *** Analysis
@@ -415,6 +427,7 @@ Other Metrics Of Interest
 **** Big O
 
 **** Analytic Combinatorics
+
 
 ** Distributed Computing
 
@@ -430,9 +443,12 @@ Other Metrics Of Interest
 
 Has its own section under [[Scala]].
 
+
 *** Consensus
 
+
 *** Vector Clocks
+
 
 ** Denotational Semantics
 
@@ -441,6 +457,7 @@ Has its own section under [[Scala]].
 **** Conal Elliot
 
 [[http://conal.net/][Home Page]]
+
 
 ** Emacs
 *** Elisp
@@ -583,29 +600,46 @@ Has its own section under [[Scala]].
 **** Yasnippet
 **** ido
 *** Tips & Tricks
+
+
 ** Emotionally Focused Therapy
 
 *** Links 
 
 - [[https://en.wikipedia.org/wiki/Emotionally_focused_therapy][on Wikipedia]]
 
+
 ** Fault Tolerance
 
 *** Terms
 
-- failure :: When the delivered service no longer complies with the specification.  If there is no specification, there can be no failure. Failures are observed by the user of the system.  Failures are caused by errors.
+- failure :: When the delivered service no longer complies with the
+             specification.  If there is no specification, there can
+             be no failure. Failures are observed by the user of the
+             system.  Failures are caused by errors.
 
-- error :: An incorrect system behavior that may cause a failure. Errors fall into two categories: timing and value.  Value errors can take the form of incorrect state or an incorrect discrete value. Errors can be detected before they cause failures.  Errors are the manifestation of faults.  The presence of errors implies the presence of faults.
+- error :: An incorrect system behavior that may cause a
+           failure. Errors fall into two categories: timing and value.
+           Value errors can take the form of incorrect state or an
+           incorrect discrete value. Errors can be detected before
+           they cause failures.  Errors are the manifestation of
+           faults.  The presence of errors implies the presence of
+           faults.
 
-- fault :: a defect in a system that can cause an error.  Faults can be caused by incorrect requirements, coding defects, incorrect designs, etc.  A fault that is not causing any errors is latent.
+- fault :: a defect in a system that can cause an error.  Faults can
+           be caused by incorrect requirements, coding defects,
+           incorrect designs, etc.  A fault that is not causing any
+           errors is latent.
 
 - latent :: A fault that is not causing any errors is latent.
 
 - active :: A fault that causes an error is active.
 
-- fail-silent :: a system that presents the correct result or no result at all.
+- fail-silent :: a system that presents the correct result or no
+                 result at all.
 
 - crash-failure :: the system stops after it detects an error
+
 
 *** Bad Assumptions
 
@@ -618,17 +652,24 @@ Has its own section under [[Scala]].
 
 - Each error is independent from each other error - errors can cascade
 
+
 *** Fault -> Error -> Failure
 
 *** Books [0/1]
 
 - [ ] [[http://techbus.safaribooksonline.com/book/software-engineering-and-development/patterns/9780470319796][Patterns for Fault Tolerant Software]] by Robert S. Hanmer
 
+
 ** Functional Programming 
 
 *** Lambda Calculus
 
+
 *** Functional Data Structures
+
+
+*** Functional Reactive Programming
+
 
 ** Information Theory
    
@@ -636,7 +677,9 @@ Has its own section under [[Scala]].
 
 *** Compression
 
+
 ** Learning
+
 
 ** Machine Learning
 
@@ -666,6 +709,7 @@ Has its own section under [[Scala]].
  
 - [[http://www.cs.waikato.ac.nz/ml/weka/][Home Page]]
 
+
 ** Mathematics
 *** Algebra
 *** Linear Algebra
@@ -683,6 +727,7 @@ Has its own section under [[Scala]].
 *** Graph Theory
 *** Proofs
 
+
 ** Operating Systems
 *** Concepts
 **** Virtual Memory
@@ -695,6 +740,7 @@ Has its own section under [[Scala]].
 
 *** FreeBSD
     
+
 ** Programming Environments
 
 *** Java Virtual Machine
@@ -702,6 +748,7 @@ Has its own section under [[Scala]].
 *** .NET Runtime
 
 I'm pretty much focusing on the JVM for now.
+
 
 
 ** Programming Languages
@@ -760,14 +807,29 @@ I'm pretty much focusing on the JVM for now.
 
 - [[https://maven.apache.org/guides/index.html][Documentation]]
 
+
+***** JavaDoc
+
+Multiline Code Samples
+
+: * <pre>
+: * {@code
+: * Set<String> s;
+: * System.out.println(s);
+: * }
+: * </pre>
+
 *** Scala
 
 **** Links
 
 - [[http://docs.scala-lang.org/][Home Page]]
 - [[http://www.scala-lang.org/api/current/#package][ScalaDocs (Current)]]
+- [[http://twitter.github.io/effectivescala/][Effective Scala]]
+
 
 **** Macros
+
 
 **** *Akka
 
@@ -792,7 +854,7 @@ I'm pretty much focusing on the JVM for now.
                 "akka.tcp://system@host:port".  "akka.udp" is also
                 available.
 
-- Actor system :: a hierarchical group of actors which share common
+- Actor System :: a hierarchical group of actors which share common
                   configuration.  It is also used for looking up
                   actors.  They are heavyweight so create one per
                   logical application.
@@ -857,6 +919,7 @@ I'm pretty much focusing on the JVM for now.
 
 
 **** scalaz
+     
 
 *** Haskell
 
@@ -894,19 +957,29 @@ I'm pretty much focusing on the JVM for now.
 - [ ] [[http://www.scs.stanford.edu/11au-cs240h/notes/][Lecture Notes from Stanford's Haskell Course]]
   
 **** Concurrency
+
+***** CUDA
+
 **** Arrows
+
 **** Monoids
+
 **** MonadPlus
+
 **** Lenses
 
 *** C++
 
 **** Lambda Expressions
 
+
 **** Concurrency
      
-**** Concepts (next version)
+
+**** Concepts (next version of C++?)
+
 **** Templates
+
 
 *** Python
 
@@ -928,7 +1001,11 @@ I'm pretty much focusing on the JVM for now.
 **** ML
 ***** Side-Effects
 **** Javascript
+
+
 ** Software Architecture
+
+
 ** Testing
 *** Test Driven Development
 **** EasyMock
@@ -950,6 +1027,8 @@ Some commonly used expectations:
 - times(int count) 
 
 *** Behavior Driven Development
+
+
 ** Ultra Learning
 
 *** Links [66%] [2/3]
@@ -1053,9 +1132,11 @@ Most intuitions are one of the following types:
 Once you feel you understand a concept see if you can use one of the
 above methods above to explain it.
 
+
 ** Version Control
 
 *** git
+
 
 ** Web Frameworks
 *** Client Side
@@ -1063,10 +1144,13 @@ above methods above to explain it.
 *** Server Side
 **** Play!
 
+
 ** Systems
 *** Links
 **** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
-** Simulations  
+
+
+** Simulations
 
 #+OPTIONS: num:nil
 
