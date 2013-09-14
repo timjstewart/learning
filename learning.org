@@ -22,7 +22,38 @@ org-mode installed).
 
 These are some of the topics I'm interested in learning more about.
 
-** Artificial Intelligence
+** Algorithms
+
+*** To Learn About [0/26]
+
+**** TODO [[http://arxiv.org/abs/cs/0011047][Dancing Links (Knuth)]]
+**** TODO [[http://citeseerx.ist.psu.edu/viewdoc/summary?doi%3D10.1.1.34.1317][Persistent Arrays]]
+**** TODO [[http://en.wikipedia.org/wiki/Binary_search_algorithm][Binary Search]]
+**** TODO [[http://en.wikipedia.org/wiki/Bucket_sort][Bucket Sort]]
+**** TODO [[http://en.wikipedia.org/wiki/Cantor%2527s_diagonal_argument][Cantor's Diagonal Argument]]
+**** TODO [[http://en.wikipedia.org/wiki/Cycle_detection][Cycle Detection]]
+**** TODO [[http://en.wikipedia.org/wiki/Dijkstra%2527s_algorithm][Dijkstra's Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Disjoint-set_data_structure][Disjoint-set data structure]]
+**** TODO [[http://en.wikipedia.org/wiki/Euclidean_algorithm][Euclidean Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm][Floyd-Warshall]]
+**** TODO [[http://en.wikipedia.org/wiki/Hash_consing][Hash Consing]]
+**** TODO [[http://en.wikipedia.org/wiki/Horner_scheme][Horner Scheme]]
+**** TODO [[http://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm][Knuth-Bendix Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Linear_programming#Algorithms][Linear Programming Algorithms]]
+**** TODO [[http://en.wikipedia.org/wiki/Reed_Solomon][Reed-Solomon Error Correction]]
+**** TODO [[http://en.wikipedia.org/wiki/Reservoir_sampling#cite_note-1][Resevoir Sampling]]
+**** TODO [[http://en.wikipedia.org/wiki/Selection_algorithm#Linear_general_selection_algorithm_-_Median_of_Medians_algorithm][Selection Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Simplex_algorithm][Simplex Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Stable_marriage_problem][Stable Marriage Problem]]
+**** TODO [[http://en.wikipedia.org/wiki/Strassen_algorithm][Strassen Algorithm]]
+**** TODO [[http://link.springer.com/book/10.1007/978-3-642-15328-0/page/1][Algorithms Unplugged (Book)]]
+**** TODO [[http://www.cs.bell-labs.com/cm/cs/pearls/][Programming Pearls (a source of algorithms)]]
+**** TODO [[http://www.cs.bell-labs.com/cm/cs/pearls/maxsum.c][Maximum Sum Subsequence]]
+**** TODO [[http://www.cs.utexas.edu/~moore/best-ideas/mjrty/][Linear Time Majority Vote]]
+**** TODO [[http://www.hutter1.net/ai/pfastprg.htm][Fastest and Shortest Algorithm for all well-defined problems]]
+**** TODO [[Khttp://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm][Knuth-Morris-Pratt (KMP)]]
+
+** Artificial intelligence
 
 *** Reinforcement Learning
 
