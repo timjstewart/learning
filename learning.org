@@ -431,6 +431,116 @@ Other Metrics Of Interest
 
 ** Distributed Computing
 
+*** Books 
+
+
+**** [[http://www.amazon.com/Elements-Distributed-Computing-Vijay-Garg/dp/0471036005]["Elements of Distributed Computing"]] by Vijay K. Garg
+
+***** Benefits of Distributed Systems
+
+- Scalability - Processors can be added and removed easily.
+
+- Modularity and Heterogeneity - The system can be comprised of
+  systems with different processors.
+
+- Data Sharing - Multiple organizations can share data.  Multiple
+  office locations or data centers too.
+
+- Resource Sharing - An expensive processor can be shared by multiple
+  organizations.
+
+- Geographical Structure - 
+
+- Reliability - Failure of one system does not affect the availability
+  of the others.
+
+- Low Cost - It's cheaper to buy a lot of commodity computers and
+  connect them via a high speed network than to buy high performance
+  computers.
+
+Don't abandon single computer parallelism.  It still has benefits
+(performance mostly).
+
+***** Defining Characteristics of a Distributed System
+
+- No shared clock - causality can help tackle this problem
+
+- No shared memory - it is difficult to observe any global property of
+  the system.
+
+- No accurate failure detection - it is impossible to differentiate
+  between a slow processor and a failed processor.
+
+***** Notation
+
+: (op free-var-list : range-of-free-vars : expression)
+
+For example:
+
+(\forall i : 0 \le i \le 10 : i\sup2 \le 100) 
+
+where:
+
+- op is a universal or existential quantifier
+- free-var-list is the list of variables over which the quantification is made
+- range-of-free-vars is the range of the free variables
+
+
+***** Model of a Distributed System
+
+- Set of N processes without a shared clock and without shared memory
+- A pair of processes can be connected by unidirectional channel along
+  which messages flow
+- The processes and communication links form a directed graph
+- If a pair of processes send messages back and forth between each
+  other, then that is modeled as two channels, one for each direction
+  the messages are passed in.
+- Channels are assumed to (neither of which are true):
+ - have infinite buffer
+ - be error free
+- A message may be delayed on the channel for arbitrary but finite
+  amounts of time.
+- The state of the channel is all of the messages sent on the channel
+  that have not been received.
+- Processes are modeled as state machines (that transition between
+  states in response to events).
+- When a process receives an event, the state of at most one channel
+  may also change (e.g. another message added to that channel).  This
+  implies that as a result of a state change, a process can only
+  notify one other process.
+
+***** Interleaving Model
+
+- In this model a run of the system is a global sequence of events.
+  The ordering of events is total.
+- The global state of such a system is the cross product of all
+  process states and all channel states.
+- An initial state is one in which all the channels are empty and all
+  the processes are in an initial state (taken from a subset of all of
+  the process' states).
+
+***** Happened Before Model
+
+Leslie Lamport argued that at best you could discuss a system's
+partial ordering of events.
+
+A run in the Happened Before model is a tuple: (E, H) where E is the
+set of all the events that took place and H is the partial order of
+the events in E.
+
+***** Potential Causality Model
+
+Within a single process, not every event causes another event but
+there is a partial ordering of causes and effects within a single
+process.
+
+Potential Causality is cheaper to compute than Causality so we'll use
+Potential Causality.
+
+Two events are independent if neither one potentially caused the
+other.
+
+
 *** Links [0%]
 
 - [ ] [[https://en.wikipedia.org/wiki/CAP_theorem][CAP Theorem]]
@@ -443,9 +553,32 @@ Other Metrics Of Interest
 
 Has its own section under [[Scala]].
 
-
 *** Consensus
 
+
+*** Terms
+
+- Concurrent :: In the Happened Before Model two events e and f are
+                concurrent if e did not happen before f and f did not
+                happen before e.  Does that really mean that the two
+                events happened at the same time or does that just
+                mean that you can't establish a relative ordering of
+                the two events?
+- Distributed System :: A computer system composed of multiple
+     processors connected by a network.  Processors communicate by
+     sending messages over the network.
+
+- Happened Before :: If event e locally or remotely immediately
+     precedes event f, then event e happened before event f.  This
+     relationship is transitive.
+
+- Locally Precedes :: In the Happened Before model an event e locally
+     immediately precedes an event f, if event e happened immediately
+     before f in the process' sequence of events.
+
+- Remotely Precedes :: In the Happened Before model, an event e
+     remotely precedes an event f iff e is the send event for a
+     message and f is the receive event for that same message.
 
 *** Vector Clocks
 
@@ -687,6 +820,7 @@ Has its own section under [[Scala]].
 
 - [ ] [[http://www.kaggle.com/][Kaggle]]
 
+
 *** Supervised Learning
 
 
@@ -694,13 +828,19 @@ Has its own section under [[Scala]].
 
 **** Naive Bayesian Classifier
 
+
 *** Unsupervised Learning
 
 
 **** Clustering
 
+
 *** Ensemble Methods
+
+
 *** Boosting
+
+
 *** Tools
 
 **** Weka
@@ -709,24 +849,32 @@ Has its own section under [[Scala]].
  
 - [[http://www.cs.waikato.ac.nz/ml/weka/][Home Page]]
 
-
 ** Mathematics
 *** Algebra
+
 *** Linear Algebra
+
 *** Discrete Math
 **** Books
 ***** "Concrete Mathematics" by Donald Knuth, et al.
+
 *** Euler's Constant
+
 *** Causality
 **** Books
 ***** "Causality" by Judea Pearl
-*** Abstract Algebra
-*** Probability
-*** Statistics
-*** Distance Metrics
-*** Graph Theory
-*** Proofs
 
+*** Abstract Algebra
+
+*** Probability
+
+*** Statistics
+
+*** Distance Metrics
+
+*** Graph Theory
+
+*** Proofs
 
 ** Operating Systems
 *** Concepts
@@ -818,6 +966,7 @@ Multiline Code Samples
 : * System.out.println(s);
 : * }
 : * </pre>
+
 
 *** Scala
 
@@ -968,8 +1117,9 @@ Multiline Code Samples
 
 **** Lenses
 
-*** C++
 
+*** C++
+    
 **** Lambda Expressions
 
 
@@ -978,7 +1128,11 @@ Multiline Code Samples
 
 **** Concepts (next version of C++?)
 
+
 **** Templates
+
+
+**** C++ Renaissance
 
 
 *** Python
@@ -994,6 +1148,7 @@ Multiline Code Samples
 **** Generators
 **** The with keyword
 
+
 *** Other
 **** Prolog
 ***** Difference Lists
@@ -1001,14 +1156,21 @@ Multiline Code Samples
 **** ML
 ***** Side-Effects
 **** Javascript
-
-
+     
 ** Software Architecture
 
+*** Hexagonal Architecture
 
 ** Testing
+
 *** Test Driven Development
+
+**** Hamcrest
+
+Anagram for matchers
+
 **** EasyMock
+
 ***** Links
 
 - [[http://www.easymock.org/EasyMock3_1_Documentation.html][Documentation]]
@@ -1025,6 +1187,7 @@ Some commonly used expectations:
 - atLeastOnce() 
 - once() 
 - times(int count) 
+
 
 *** Behavior Driven Development
 
@@ -1139,14 +1302,23 @@ above methods above to explain it.
 
 
 ** Web Frameworks
+
 *** Client Side
+
 **** Angular JS
+
 *** Server Side
+
 **** Play!
 
 
+**** NodeJS
+
+
 ** Systems
+
 *** Links
+
 **** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
 
 
