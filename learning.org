@@ -589,6 +589,12 @@ Has its own section under [[Scala]].
 
 *** Terms
 
+- Byzantine Failure :: a failure mode in which systems don't crash but
+     continue running and producing invalid requests and data.
+
+- Byzantine Fault Tolerance :: a means of fault tolerance that guards
+     against Byzantine failures.
+
 - Concurrent :: In the Happened Before Model two events e and f are
                 concurrent if e did not happen before f and f did not
                 happen before e.  Does that really mean that the two
@@ -610,6 +616,22 @@ Has its own section under [[Scala]].
 - Remotely Precedes :: In the Happened Before model, an event e
      remotely precedes an event f iff e is the send event for a
      message and f is the receive event for that same message.
+
+
+*** Two Generals Problem
+
+See: [[http://en.wikipedia.org/wiki/Two_Generals%2527_Problem][Wikipedia]]
+
+A thought experiment used to highlight the challenges coordinationg an
+action by communicating over an unreliable link.
+
+There are three valleys.  The center valley has a city in it.  The
+left and right valleys have armies encamped in them.  Both armies must
+attack the city in order for the attack to succeed.  If one army sends
+a messenger to tell the other army when the attack will occur, it is
+possible that the messenger will be captured.  Knowing about the
+potential for capture, the army that sent the message may hesitate when
+it comes time to attack.
 
 *** Vector Clocks
 
