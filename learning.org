@@ -1092,7 +1092,7 @@ Multiline Code Samples
 **** Macros
 
 
-**** *Akka
+**** Akka
 
 ***** Links 
 
@@ -1101,7 +1101,7 @@ Multiline Code Samples
 - [[http://doc.akka.io/docs/akka/2.2.1/scala.html][Scala Documentation]]
 
 - [[http://doc.akka.io/api/akka/2.2.1/][ScalaDocs]]
-
+  
 ***** Concepts
 
 - Actor :: Every actor has one supervisor which is the actor that
@@ -1123,6 +1123,8 @@ Multiline Code Samples
 - Ask :: The '?' operator initiates an ask operation.  Ask waits for a
          response and as such incurs greater overhead.
 
+- Consumer :: 
+
 - Divide and Conquer :: Tasks are split up and delegated to the point
      that they are of a manageable size.
 
@@ -1133,18 +1135,23 @@ Multiline Code Samples
 - Failure :: If an actor cannot respond to a message, it bubbles the
              error up to its supervisor.
 
+- FSM :: A trait that allows an Actor to behave like a finite state
+         machine.
+
 - Message Delivery Guarantees :: Akka makes two guarantees: 1)
      at-most-once delivery (i.e. no guaranteed delivery) and 2)
      message ordering per sender–receiver pair ([[http://doc.akka.io/docs/akka/2.2.1/general/message-delivery-guarantees.html#message-delivery-guarantees][Source]]).
+
+- Scheduler :: If you need to make sure that something happens in the
+               future, use the ActorSystem Scheduler.
 
 - Tell :: Sending a fire-and-forget message to another actor.  The
           sending actor's reference is implicitly sent along with the
           message.  The '!' operator initiates a tell operation.  Tell
           is more performant and scalable because there is no need to
           wait for a response (using a Future).  Compare with Ask.
-
+	  
 ***** Supervision Guidelines
-
 
 [[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]
 
@@ -1161,22 +1168,61 @@ Multiline Code Samples
 
 ***** Actor Best Practices
 
+****** References
 
-[[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]
+- [[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Akka Actor System Documentation]]
+- [[http://doc.akka.io/docs/akka/snapshot/scala/actors.html][Akka Actor Documentation]]
+       
+****** Immutable Messages
 
-- Actors should not block
+Use case classes when possible.
 
-- Don't pass mutable objects between actors
+****** Give each Actor Class a Companion Object
 
-- Don't send behavior (e.g. closures) in messages
+Example:
 
-- Top-level actors are the innermost part of your error kernel so
-  create them sparingly and hierarchically.
+: object DemoActor {
+:   def props(name: String): Props = Props(classOf[DemoActor], name)
+: }
+:  
+: class DemoActor(name: String) extends Actor {
+:   def receive = {
+:    :
+:   }
+: }
 
-- If an actor must block consider doing so from within a set of actors
-  managed by a router.
+****** Never block
+
+Actors should not block.
+
+But if an actor must block consider doing so from within a set of
+actors managed by a router.
+
+****** Don't send behavior (e.g. closures) in messages
+
+****** Error Kernel 
+
+Top-level actors are the innermost part of your error kernel so create
+them sparingly and hierarchically.
 
 
+
+
+****** Actor State
+
+I've been looking for some recommended way of handling actor state
+(e.g. if an actor needs to keep track of some data).  My previous
+experience with actor state is from the Erlang world, where either OTP
+handles updating your state or you manually call your actor's loop
+function with the adjusted state.  The closest thing I have found is
+an [[https://github.com/akka/akka/blob/master/akka-samples/akka-sample-persistence/src/main/scala/sample/persistence/ConversationRecoveryExample.scala][example]] bundled with Akka that shows a mutable Int (var) used as a
+counter.
+
+****** Consider Using Become to Change Behavior
+
+When your actor needs to change the way it responds to messages and
+you don't want to use the FSM capabilities of Akka, consider the
+become method.
 
 
 **** scalaz
