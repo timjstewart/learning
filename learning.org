@@ -1193,20 +1193,32 @@ Example:
 
 ****** Never block
 
-Actors should not block.
+Actors should not block.  While the actor is blocked, it cannot
+process any messages.  Blocking can lead to deadlock.
 
 But if an actor must block consider doing so from within a set of
 actors managed by a router.
 
 ****** Don't send behavior (e.g. closures) in messages
 
+They don't remote well.
+
 ****** Error Kernel 
 
 Top-level actors are the innermost part of your error kernel so create
 them sparingly and hierarchically.
 
-
-
+If sounds like actors that know things are more important to keep
+alive than actors that do things.  The actor that does something can
+be recreated at a minimal cost.  The actor that knows something loses
+all that information if it is lost.  Some similarities to human
+organizations...  Do the best actor hierarchies strive to separate
+know-ers from do-ers?  Some know-ers can easily recreate their
+knowledge so maybe these know-ers are more replaceable than other
+know-ers.  In that case, there is a spectrum of agent preservation
+ranging from the lowest degree (let it crash and then replace it) all
+the way up to the highest degree (keep it away from anything that can
+fail).
 
 ****** Actor State
 
@@ -1216,7 +1228,8 @@ experience with actor state is from the Erlang world, where either OTP
 handles updating your state or you manually call your actor's loop
 function with the adjusted state.  The closest thing I have found is
 an [[https://github.com/akka/akka/blob/master/akka-samples/akka-sample-persistence/src/main/scala/sample/persistence/ConversationRecoveryExample.scala][example]] bundled with Akka that shows a mutable Int (var) used as a
-counter.
+counter.  The cluster [[https://github.com/akka/akka/blob/master/akka-samples/akka-sample-cluster/src/main/scala/sample/cluster/stats/StatsSample.scala#L78][example]] also maintains a cache (as a var holding
+an immutable Map) in an actor.
 
 ****** Consider Using Become to Change Behavior
 
