@@ -587,6 +587,65 @@ Has its own section under [[Scala]].
 *** Consensus
 
 
+*** Projects
+
+**** Akka
+
+**** Cassandra
+
+**** JGroups
+
+**** Kafka
+
+**** MongoDB
+
+**** RabbitMQ
+
+**** Storm
+
+***** Links [0/3]
+
+- [ ] [[https://github.com/nathanmarz/storm/blob/master/storm-core/src/clj/backtype/storm/daemon/nimbus.clj][Nimbus Source Code (Clojure)]]
+- [ ] [[https://github.com/nathanmarz/storm/wiki/Concepts][Storm Concepts]]
+- [ ] [[https://github.com/nathanmarz/storm/wiki/Tutorial][Tutorial]]
+
+***** Concepts
+
+****** IBasicBolt vs. IRichBolt
+
+- IBasicBolt :: All acking is managed for you. Throw a FailedException
+                if you want to fail the tuple.
+
+- IRichBolt :: Implementors must ack or fail the tuple themselves in
+               the execute call.
+
+****** Cluster State
+
+Nimbus and the Supervisor daemons are fail-fast and stateless.  All
+cluster state is stored by Zookeeper on disk.  You can kill -9 Nimbus
+and the Supervisors and they'll restart correctly.
+
+- Nimbus :: The master node.  All other nodes in the cluster are
+            Worker nodes
+
+- Stream :: An unbounded sequence of Tuples; the primary abstraction
+            in Storm.
+
+- Supervisor :: A daemon that runs on every Worker Node.  It listens
+                for work assignments and starts and stops worker
+                processes.
+
+- Worker Node :: A Node in a Storm Cluster that runs Spouts and/or
+                 Bolts.  Every worker node runs a daemon called the
+                 Supervisor.
+
+- Zookeeper :: Responsible for all communication between Nimbus and
+               the Supervisors.
+
+
+**** Zookeeper
+
+
 *** Terms
 
 - Byzantine Failure :: a failure mode in which systems don't crash but
