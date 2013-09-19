@@ -22,7 +22,38 @@ org-mode installed).
 
 These are some of the topics I'm interested in learning more about.
 
-** Artificial Intelligence
+** Algorithms
+
+*** To Learn About [0/26]
+
+**** TODO [[http://arxiv.org/abs/cs/0011047][Dancing Links (Knuth)]]
+**** TODO [[http://citeseerx.ist.psu.edu/viewdoc/summary?doi%3D10.1.1.34.1317][Persistent Arrays]]
+**** TODO [[http://en.wikipedia.org/wiki/Binary_search_algorithm][Binary Search]]
+**** TODO [[http://en.wikipedia.org/wiki/Bucket_sort][Bucket Sort]]
+**** TODO [[http://en.wikipedia.org/wiki/Cantor%2527s_diagonal_argument][Cantor's Diagonal Argument]]
+**** TODO [[http://en.wikipedia.org/wiki/Cycle_detection][Cycle Detection]]
+**** TODO [[http://en.wikipedia.org/wiki/Dijkstra%2527s_algorithm][Dijkstra's Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Disjoint-set_data_structure][Disjoint-set data structure]]
+**** TODO [[http://en.wikipedia.org/wiki/Euclidean_algorithm][Euclidean Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm][Floyd-Warshall]]
+**** TODO [[http://en.wikipedia.org/wiki/Hash_consing][Hash Consing]]
+**** TODO [[http://en.wikipedia.org/wiki/Horner_scheme][Horner Scheme]]
+**** TODO [[http://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm][Knuth-Bendix Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Linear_programming#Algorithms][Linear Programming Algorithms]]
+**** TODO [[http://en.wikipedia.org/wiki/Reed_Solomon][Reed-Solomon Error Correction]]
+**** TODO [[http://en.wikipedia.org/wiki/Reservoir_sampling#cite_note-1][Resevoir Sampling]]
+**** TODO [[http://en.wikipedia.org/wiki/Selection_algorithm#Linear_general_selection_algorithm_-_Median_of_Medians_algorithm][Selection Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Simplex_algorithm][Simplex Algorithm]]
+**** TODO [[http://en.wikipedia.org/wiki/Stable_marriage_problem][Stable Marriage Problem]]
+**** TODO [[http://en.wikipedia.org/wiki/Strassen_algorithm][Strassen Algorithm]]
+**** TODO [[http://link.springer.com/book/10.1007/978-3-642-15328-0/page/1][Algorithms Unplugged (Book)]]
+**** TODO [[http://www.cs.bell-labs.com/cm/cs/pearls/][Programming Pearls (a source of algorithms)]]
+**** TODO [[http://www.cs.bell-labs.com/cm/cs/pearls/maxsum.c][Maximum Sum Subsequence]]
+**** TODO [[http://www.cs.utexas.edu/~moore/best-ideas/mjrty/][Linear Time Majority Vote]]
+**** TODO [[http://www.hutter1.net/ai/pfastprg.htm][Fastest and Shortest Algorithm for all well-defined problems]]
+**** TODO [[Khttp://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm][Knuth-Morris-Pratt (KMP)]]
+
+** Artificial intelligence
 
 *** Reinforcement Learning
 
@@ -266,13 +297,11 @@ Multiagent environments can be cooperative or competitive.
 
 - [[./Agent.hs][Agent.hs]]
 
-
 ** Big Data
 
 *** Hadoop
 
 *** Cascading
-
 
 ** Cognitive Science
 
@@ -284,7 +313,6 @@ Multiagent environments can be cooperative or competitive.
 **** "Now you See It" by Cathy Davidson
 
 [[http://www.amazon.com/Now-You-See-Attention-Transform/dp/0670022829][On Amazon]]
-
 
 ** Computer Architecture
 
@@ -395,7 +423,6 @@ Other Metrics Of Interest
 
 **** Hard Drive (Rotating)
 
-
 ** Databases
 
 *** Relational
@@ -419,7 +446,6 @@ Other Metrics Of Interest
 
 **** MongoDB
 
-
 ** Data Structures
 
 *** Analysis
@@ -428,8 +454,117 @@ Other Metrics Of Interest
 
 **** Analytic Combinatorics
 
-
 ** Distributed Computing
+
+*** Books 
+
+
+**** [[http://www.amazon.com/Elements-Distributed-Computing-Vijay-Garg/dp/0471036005]["Elements of Distributed Computing"]] by Vijay K. Garg
+
+***** Benefits of Distributed Systems
+
+- Scalability - Processors can be added and removed easily.
+
+- Modularity and Heterogeneity - The system can be comprised of
+  systems with different processors.
+
+- Data Sharing - Multiple organizations can share data.  Multiple
+  office locations or data centers too.
+
+- Resource Sharing - An expensive processor can be shared by multiple
+  organizations.
+
+- Geographical Structure - 
+
+- Reliability - Failure of one system does not affect the availability
+  of the others.
+
+- Low Cost - It's cheaper to buy a lot of commodity computers and
+  connect them via a high speed network than to buy high performance
+  computers.
+
+Don't abandon single computer parallelism.  It still has benefits
+(performance mostly).
+
+***** Defining Characteristics of a Distributed System
+
+- No shared clock - causality can help tackle this problem
+
+- No shared memory - it is difficult to observe any global property of
+  the system.
+
+- No accurate failure detection - it is impossible to differentiate
+  between a slow processor and a failed processor.
+
+***** Notation
+
+: (op free-var-list : range-of-free-vars : expression)
+
+For example:
+
+(\forall i : 0 \le i \le 10 : i\sup2 \le 100) 
+
+where:
+
+- op is a universal or existential quantifier
+- free-var-list is the list of variables over which the quantification is made
+- range-of-free-vars is the range of the free variables
+
+
+***** Model of a Distributed System
+
+- Set of N processes without a shared clock and without shared memory
+- A pair of processes can be connected by unidirectional channel along
+  which messages flow
+- The processes and communication links form a directed graph
+- If a pair of processes send messages back and forth between each
+  other, then that is modeled as two channels, one for each direction
+  the messages are passed in.
+- Channels are assumed to (neither of which are true):
+ - have infinite buffer
+ - be error free
+- A message may be delayed on the channel for arbitrary but finite
+  amounts of time.
+- The state of the channel is all of the messages sent on the channel
+  that have not been received.
+- Processes are modeled as state machines (that transition between
+  states in response to events).
+- When a process receives an event, the state of at most one channel
+  may also change (e.g. another message added to that channel).  This
+  implies that as a result of a state change, a process can only
+  notify one other process.
+
+***** Interleaving Model
+
+- In this model a run of the system is a global sequence of events.
+  The ordering of events is total.
+- The global state of such a system is the cross product of all
+  process states and all channel states.
+- An initial state is one in which all the channels are empty and all
+  the processes are in an initial state (taken from a subset of all of
+  the process' states).
+
+***** Happened Before Model
+
+Leslie Lamport argued that at best you could discuss a system's
+partial ordering of events.
+
+A run in the Happened Before model is a tuple: (E, H) where E is the
+set of all the events that took place and H is the partial order of
+the events in E.
+
+***** Potential Causality Model
+
+Within a single process, not every event causes another event but
+there is a partial ordering of causes and effects within a single
+process.
+
+Potential Causality is cheaper to compute than Causality so we'll use
+Potential Causality.
+
+Two events are independent if neither one potentially caused the
+other.
+
 
 *** Links [0%]
 
@@ -443,12 +578,115 @@ Other Metrics Of Interest
 
 Has its own section under [[Scala]].
 
-
 *** Consensus
 
 
-*** Vector Clocks
+*** Projects
 
+**** Akka
+
+**** Cassandra
+
+**** JGroups
+
+**** Kafka
+
+**** MongoDB
+
+**** RabbitMQ
+
+**** Storm
+
+***** Links [0/3]
+
+- [ ] [[https://github.com/nathanmarz/storm/blob/master/storm-core/src/clj/backtype/storm/daemon/nimbus.clj][Nimbus Source Code (Clojure)]]
+- [ ] [[https://github.com/nathanmarz/storm/wiki/Concepts][Storm Concepts]]
+- [ ] [[https://github.com/nathanmarz/storm/wiki/Tutorial][Tutorial]]
+
+***** Concepts
+
+****** IBasicBolt vs. IRichBolt
+
+- IBasicBolt :: All acking is managed for you. Throw a FailedException
+                if you want to fail the tuple.
+
+- IRichBolt :: Implementors must ack or fail the tuple themselves in
+               the execute call.
+
+****** Cluster State
+
+Nimbus and the Supervisor daemons are fail-fast and stateless.  All
+cluster state is stored by Zookeeper on disk.  You can kill -9 Nimbus
+and the Supervisors and they'll restart correctly.
+
+- Nimbus :: The master node.  All other nodes in the cluster are
+            Worker nodes
+
+- Stream :: An unbounded sequence of Tuples; the primary abstraction
+            in Storm.
+
+- Supervisor :: A daemon that runs on every Worker Node.  It listens
+                for work assignments and starts and stops worker
+                processes.
+
+- Worker Node :: A Node in a Storm Cluster that runs Spouts and/or
+                 Bolts.  Every worker node runs a daemon called the
+                 Supervisor.
+
+- Zookeeper :: Responsible for all communication between Nimbus and
+               the Supervisors.
+
+
+**** Zookeeper
+
+
+*** Terms
+
+- Byzantine Failure :: a failure mode in which systems don't crash but
+     continue running and producing invalid requests and data.
+
+- Byzantine Fault Tolerance :: a means of fault tolerance that guards
+     against Byzantine failures.
+
+- Concurrent :: In the Happened Before Model two events e and f are
+                concurrent if e did not happen before f and f did not
+                happen before e.  Does that really mean that the two
+                events happened at the same time or does that just
+                mean that you can't establish a relative ordering of
+                the two events?
+- Distributed System :: A computer system composed of multiple
+     processors connected by a network.  Processors communicate by
+     sending messages over the network.
+
+- Happened Before :: If event e locally or remotely immediately
+     precedes event f, then event e happened before event f.  This
+     relationship is transitive.
+
+- Locally Precedes :: In the Happened Before model an event e locally
+     immediately precedes an event f, if event e happened immediately
+     before f in the process' sequence of events.
+
+- Remotely Precedes :: In the Happened Before model, an event e
+     remotely precedes an event f iff e is the send event for a
+     message and f is the receive event for that same message.
+
+
+*** Two Generals Problem
+
+See: [[http://en.wikipedia.org/wiki/Two_Generals%2527_Problem][Wikipedia]]
+
+A thought experiment used to highlight the challenges coordinationg an
+action by communicating over an unreliable link.
+
+There are three valleys.  The center valley has a city in it.  The
+left and right valleys have armies encamped in them.  Both armies must
+attack the city in order for the attack to succeed.  If one army sends
+a messenger to tell the other army when the attack will occur, it is
+possible that the messenger will be captured.  Knowing about the
+potential for capture, the army that sent the message may hesitate when
+it comes time to attack.
+
+*** Vector Clocks
 
 ** Denotational Semantics
 
@@ -457,7 +695,6 @@ Has its own section under [[Scala]].
 **** Conal Elliot
 
 [[http://conal.net/][Home Page]]
-
 
 ** Emacs
 *** Elisp
@@ -601,14 +838,97 @@ Has its own section under [[Scala]].
 **** ido
 *** Tips & Tricks
 
-
 ** Emotionally Focused Therapy
 
 *** Links 
 
 - [[https://en.wikipedia.org/wiki/Emotionally_focused_therapy][on Wikipedia]]
 
+** Evolutionary Computing
 
+*** General Notes
+
+There are two natural ways of solving problems: using the brain (which
+leads to the field of neurocomputing) and evolution (which leads to
+the field of evolutionary computing).
+
+An Evolutionary Algorithm has three components:
+
+- Model :: a way of transforming inputs into outputs
+
+- Input :: inputs into the problem
+
+- Output :: the result of feeding the input into the model
+
+Typically in EA one of these is unknown.  For each possible unknown
+there is a kind of Evolutionary Algorithm that results:
+
+- Optimization :: You are trying to find an input that when fed to the
+                  model produces some optimal output.  By evolving the
+                  inputs and evaluating them using the model, an
+                  optimal input can be found.
+
+- Modeling (System Identification) :: The inputs are known, and the
+     outputs are known, but the formulas for mapping inputs to outputs
+     (i.e. the model) is unknown.  An example would be stock market
+     analysis.  We have historical data on stock prices and market
+     conditions (the inputs) and we see how the market reacted in
+     response to that historical data (the outputs) but we're not sure
+     of the dependency between the two (the model, for example how
+     traders react to different inputs).  By variation and selection
+     we can find a model that optimally reconciles the inputs and the
+     outputs.
+
+- Simulation :: The output is unknown.  Find out what this means and
+                revisit it.
+
+*** Components of an Evolutionary Algorithm
+
+- representation :: 
+- evaluation function (fitness function) ::
+- population ::
+- parent selection mechanism ::
+- variation operators ::
+- survivor selection mechanism (replacement) ::
+
+*** Terms
+
+- adaptive surface (or adaptive landscape) :: The n-dimensional space
+     where n - 1 of those dimensions represent traits that define a
+     solution and 1 of those dimensions represents some fitness that
+     EC is trying to maximize.
+
+- crossover :: when genes from two genotypes are combined to create
+               offspring that takes genetic material from both parent
+               genotypes.  For each potential gene a random parent is
+               selected to provide that gene.
+
+- environment :: the problem to solve
+
+- genotype :: an internal representation or encoding of the phenotype
+
+- global optimum :: The optimal solution
+
+- local optimum :: A solution that is better than, or equal to all of
+                   its neighbors but is not the optimal solution.
+
+- multimodal problem :: A problem that has multiple points that are
+     better than their neighbors thus it is possible to get stuck on a
+     local optimum.
+
+- mutation ::
+
+- phenotype :: a possible solution to the problem to solve.
+
+- selection :: determining which genotypes should have the chance to
+               crossover and produce offspring.
+
+- unimodal problem :: A problem with only a single maximum where all
+     other points on the adaptive surface are either level or climbing
+     up to the single (and therefore global) optimum.  a
+
+- variance :: a way of introducing new genotypes into the population.
+              See mutation and crossover.
 ** Fault Tolerance
 
 *** Terms
@@ -659,7 +979,6 @@ Has its own section under [[Scala]].
 
 - [ ] [[http://techbus.safaribooksonline.com/book/software-engineering-and-development/patterns/9780470319796][Patterns for Fault Tolerant Software]] by Robert S. Hanmer
 
-
 ** Functional Programming 
 
 *** Lambda Calculus
@@ -670,22 +989,20 @@ Has its own section under [[Scala]].
 
 *** Functional Reactive Programming
 
-
 ** Information Theory
    
 *** Entropy
 
 *** Compression
 
-
 ** Learning
-
 
 ** Machine Learning
 
 *** Links
 
 - [ ] [[http://www.kaggle.com/][Kaggle]]
+
 
 *** Supervised Learning
 
@@ -694,13 +1011,19 @@ Has its own section under [[Scala]].
 
 **** Naive Bayesian Classifier
 
+
 *** Unsupervised Learning
 
 
 **** Clustering
 
+
 *** Ensemble Methods
+
+
 *** Boosting
+
+
 *** Tools
 
 **** Weka
@@ -709,24 +1032,32 @@ Has its own section under [[Scala]].
  
 - [[http://www.cs.waikato.ac.nz/ml/weka/][Home Page]]
 
-
 ** Mathematics
 *** Algebra
+
 *** Linear Algebra
+
 *** Discrete Math
 **** Books
 ***** "Concrete Mathematics" by Donald Knuth, et al.
+
 *** Euler's Constant
+
 *** Causality
 **** Books
 ***** "Causality" by Judea Pearl
-*** Abstract Algebra
-*** Probability
-*** Statistics
-*** Distance Metrics
-*** Graph Theory
-*** Proofs
 
+*** Abstract Algebra
+
+*** Probability
+
+*** Statistics
+
+*** Distance Metrics
+
+*** Graph Theory
+
+*** Proofs
 
 ** Operating Systems
 *** Concepts
@@ -740,7 +1071,6 @@ Has its own section under [[Scala]].
 
 *** FreeBSD
     
-
 ** Programming Environments
 
 *** Java Virtual Machine
@@ -748,7 +1078,6 @@ Has its own section under [[Scala]].
 *** .NET Runtime
 
 I'm pretty much focusing on the JVM for now.
-
 
 
 ** Programming Languages
@@ -819,6 +1148,7 @@ Multiline Code Samples
 : * }
 : * </pre>
 
+
 *** Scala
 
 **** Links
@@ -831,7 +1161,7 @@ Multiline Code Samples
 **** Macros
 
 
-**** *Akka
+**** Akka
 
 ***** Links 
 
@@ -840,7 +1170,7 @@ Multiline Code Samples
 - [[http://doc.akka.io/docs/akka/2.2.1/scala.html][Scala Documentation]]
 
 - [[http://doc.akka.io/api/akka/2.2.1/][ScalaDocs]]
-
+  
 ***** Concepts
 
 - Actor :: Every actor has one supervisor which is the actor that
@@ -862,6 +1192,8 @@ Multiline Code Samples
 - Ask :: The '?' operator initiates an ask operation.  Ask waits for a
          response and as such incurs greater overhead.
 
+- Consumer :: 
+
 - Divide and Conquer :: Tasks are split up and delegated to the point
      that they are of a manageable size.
 
@@ -872,18 +1204,23 @@ Multiline Code Samples
 - Failure :: If an actor cannot respond to a message, it bubbles the
              error up to its supervisor.
 
+- FSM :: A trait that allows an Actor to behave like a finite state
+         machine.
+
 - Message Delivery Guarantees :: Akka makes two guarantees: 1)
      at-most-once delivery (i.e. no guaranteed delivery) and 2)
      message ordering per sender–receiver pair ([[http://doc.akka.io/docs/akka/2.2.1/general/message-delivery-guarantees.html#message-delivery-guarantees][Source]]).
+
+- Scheduler :: If you need to make sure that something happens in the
+               future, use the ActorSystem Scheduler.
 
 - Tell :: Sending a fire-and-forget message to another actor.  The
           sending actor's reference is implicitly sent along with the
           message.  The '!' operator initiates a tell operation.  Tell
           is more performant and scalable because there is no need to
           wait for a response (using a Future).  Compare with Ask.
-
+	  
 ***** Supervision Guidelines
-
 
 [[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]
 
@@ -900,22 +1237,74 @@ Multiline Code Samples
 
 ***** Actor Best Practices
 
+****** References
 
-[[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Source]]
+- [[http://doc.akka.io/docs/akka/2.2.1/general/actor-systems.html][Akka Actor System Documentation]]
+- [[http://doc.akka.io/docs/akka/snapshot/scala/actors.html][Akka Actor Documentation]]
+       
+****** Immutable Messages
 
-- Actors should not block
+Use case classes when possible.
 
-- Don't pass mutable objects between actors
+****** Give each Actor Class a Companion Object
 
-- Don't send behavior (e.g. closures) in messages
+Example:
 
-- Top-level actors are the innermost part of your error kernel so
-  create them sparingly and hierarchically.
+: object DemoActor {
+:   def props(name: String): Props = Props(classOf[DemoActor], name)
+: }
+:  
+: class DemoActor(name: String) extends Actor {
+:   def receive = {
+:    :
+:   }
+: }
 
-- If an actor must block consider doing so from within a set of actors
-  managed by a router.
+****** Never block
 
+Actors should not block.  While the actor is blocked, it cannot
+process any messages.  Blocking can lead to deadlock.
 
+But if an actor must block consider doing so from within a set of
+actors managed by a router.
+
+****** Don't send behavior (e.g. closures) in messages
+
+They don't remote well.
+
+****** Error Kernel 
+
+Top-level actors are the innermost part of your error kernel so create
+them sparingly and hierarchically.
+
+If sounds like actors that know things are more important to keep
+alive than actors that do things.  The actor that does something can
+be recreated at a minimal cost.  The actor that knows something loses
+all that information if it is lost.  Some similarities to human
+organizations...  Do the best actor hierarchies strive to separate
+know-ers from do-ers?  Some know-ers can easily recreate their
+knowledge so maybe these know-ers are more replaceable than other
+know-ers.  In that case, there is a spectrum of agent preservation
+ranging from the lowest degree (let it crash and then replace it) all
+the way up to the highest degree (keep it away from anything that can
+fail).
+
+****** Actor State
+
+I've been looking for some recommended way of handling actor state
+(e.g. if an actor needs to keep track of some data).  My previous
+experience with actor state is from the Erlang world, where either OTP
+handles updating your state or you manually call your actor's loop
+function with the adjusted state.  The closest thing I have found is
+an [[https://github.com/akka/akka/blob/master/akka-samples/akka-sample-persistence/src/main/scala/sample/persistence/ConversationRecoveryExample.scala][example]] bundled with Akka that shows a mutable Int (var) used as a
+counter.  The cluster [[https://github.com/akka/akka/blob/master/akka-samples/akka-sample-cluster/src/main/scala/sample/cluster/stats/StatsSample.scala#L78][example]] also maintains a cache (as a var holding
+an immutable Map) in an actor.
+
+****** Consider Using Become to Change Behavior
+
+When your actor needs to change the way it responds to messages and
+you don't want to use the FSM capabilities of Akka, consider the
+become method.
 
 
 **** scalaz
@@ -968,8 +1357,9 @@ Multiline Code Samples
 
 **** Lenses
 
-*** C++
 
+*** C++
+    
 **** Lambda Expressions
 
 
@@ -978,7 +1368,11 @@ Multiline Code Samples
 
 **** Concepts (next version of C++?)
 
+
 **** Templates
+
+
+**** C++ Renaissance
 
 
 *** Python
@@ -994,6 +1388,7 @@ Multiline Code Samples
 **** Generators
 **** The with keyword
 
+
 *** Other
 **** Prolog
 ***** Difference Lists
@@ -1001,14 +1396,21 @@ Multiline Code Samples
 **** ML
 ***** Side-Effects
 **** Javascript
-
-
+     
 ** Software Architecture
 
+*** Hexagonal Architecture
 
 ** Testing
+
 *** Test Driven Development
+
+**** Hamcrest
+
+Anagram for matchers
+
 **** EasyMock
+
 ***** Links
 
 - [[http://www.easymock.org/EasyMock3_1_Documentation.html][Documentation]]
@@ -1026,8 +1428,8 @@ Some commonly used expectations:
 - once() 
 - times(int count) 
 
-*** Behavior Driven Development
 
+*** Behavior Driven Development
 
 ** Ultra Learning
 
@@ -1132,23 +1534,28 @@ Most intuitions are one of the following types:
 Once you feel you understand a concept see if you can use one of the
 above methods above to explain it.
 
-
 ** Version Control
 
 *** git
 
-
 ** Web Frameworks
+
 *** Client Side
+
 **** Angular JS
+
 *** Server Side
+
 **** Play!
 
 
-** Systems
-*** Links
-**** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
+**** NodeJS
 
+** Systems
+
+*** Links
+
+**** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
 
 ** Simulations
 
