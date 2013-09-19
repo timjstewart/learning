@@ -297,13 +297,11 @@ Multiagent environments can be cooperative or competitive.
 
 - [[./Agent.hs][Agent.hs]]
 
-
 ** Big Data
 
 *** Hadoop
 
 *** Cascading
-
 
 ** Cognitive Science
 
@@ -315,7 +313,6 @@ Multiagent environments can be cooperative or competitive.
 **** "Now you See It" by Cathy Davidson
 
 [[http://www.amazon.com/Now-You-See-Attention-Transform/dp/0670022829][On Amazon]]
-
 
 ** Computer Architecture
 
@@ -426,7 +423,6 @@ Other Metrics Of Interest
 
 **** Hard Drive (Rotating)
 
-
 ** Databases
 
 *** Relational
@@ -450,7 +446,6 @@ Other Metrics Of Interest
 
 **** MongoDB
 
-
 ** Data Structures
 
 *** Analysis
@@ -458,7 +453,6 @@ Other Metrics Of Interest
 **** Big O
 
 **** Analytic Combinatorics
-
 
 ** Distributed Computing
 
@@ -694,7 +688,6 @@ it comes time to attack.
 
 *** Vector Clocks
 
-
 ** Denotational Semantics
 
 *** People
@@ -702,7 +695,6 @@ it comes time to attack.
 **** Conal Elliot
 
 [[http://conal.net/][Home Page]]
-
 
 ** Emacs
 *** Elisp
@@ -846,14 +838,97 @@ it comes time to attack.
 **** ido
 *** Tips & Tricks
 
-
 ** Emotionally Focused Therapy
 
 *** Links 
 
 - [[https://en.wikipedia.org/wiki/Emotionally_focused_therapy][on Wikipedia]]
 
+** Evolutionary Computing
 
+*** General Notes
+
+There are two natural ways of solving problems: using the brain (which
+leads to the field of neurocomputing) and evolution (which leads to
+the field of evolutionary computing).
+
+An Evolutionary Algorithm has three components:
+
+- Model :: a way of transforming inputs into outputs
+
+- Input :: inputs into the problem
+
+- Output :: the result of feeding the input into the model
+
+Typically in EA one of these is unknown.  For each possible unknown
+there is a kind of Evolutionary Algorithm that results:
+
+- Optimization :: You are trying to find an input that when fed to the
+                  model produces some optimal output.  By evolving the
+                  inputs and evaluating them using the model, an
+                  optimal input can be found.
+
+- Modeling (System Identification) :: The inputs are known, and the
+     outputs are known, but the formulas for mapping inputs to outputs
+     (i.e. the model) is unknown.  An example would be stock market
+     analysis.  We have historical data on stock prices and market
+     conditions (the inputs) and we see how the market reacted in
+     response to that historical data (the outputs) but we're not sure
+     of the dependency between the two (the model, for example how
+     traders react to different inputs).  By variation and selection
+     we can find a model that optimally reconciles the inputs and the
+     outputs.
+
+- Simulation :: The output is unknown.  Find out what this means and
+                revisit it.
+
+*** Components of an Evolutionary Algorithm
+
+- representation :: 
+- evaluation function (fitness function) ::
+- population ::
+- parent selection mechanism ::
+- variation operators ::
+- survivor selection mechanism (replacement) ::
+
+*** Terms
+
+- adaptive surface (or adaptive landscape) :: The n-dimensional space
+     where n - 1 of those dimensions represent traits that define a
+     solution and 1 of those dimensions represents some fitness that
+     EC is trying to maximize.
+
+- crossover :: when genes from two genotypes are combined to create
+               offspring that takes genetic material from both parent
+               genotypes.  For each potential gene a random parent is
+               selected to provide that gene.
+
+- environment :: the problem to solve
+
+- genotype :: an internal representation or encoding of the phenotype
+
+- global optimum :: The optimal solution
+
+- local optimum :: A solution that is better than, or equal to all of
+                   its neighbors but is not the optimal solution.
+
+- multimodal problem :: A problem that has multiple points that are
+     better than their neighbors thus it is possible to get stuck on a
+     local optimum.
+
+- mutation ::
+
+- phenotype :: a possible solution to the problem to solve.
+
+- selection :: determining which genotypes should have the chance to
+               crossover and produce offspring.
+
+- unimodal problem :: A problem with only a single maximum where all
+     other points on the adaptive surface are either level or climbing
+     up to the single (and therefore global) optimum.  a
+
+- variance :: a way of introducing new genotypes into the population.
+              See mutation and crossover.
 ** Fault Tolerance
 
 *** Terms
@@ -904,7 +979,6 @@ it comes time to attack.
 
 - [ ] [[http://techbus.safaribooksonline.com/book/software-engineering-and-development/patterns/9780470319796][Patterns for Fault Tolerant Software]] by Robert S. Hanmer
 
-
 ** Functional Programming 
 
 *** Lambda Calculus
@@ -915,16 +989,13 @@ it comes time to attack.
 
 *** Functional Reactive Programming
 
-
 ** Information Theory
    
 *** Entropy
 
 *** Compression
 
-
 ** Learning
-
 
 ** Machine Learning
 
@@ -1000,7 +1071,6 @@ it comes time to attack.
 
 *** FreeBSD
     
-
 ** Programming Environments
 
 *** Java Virtual Machine
@@ -1008,7 +1078,6 @@ it comes time to attack.
 *** .NET Runtime
 
 I'm pretty much focusing on the JVM for now.
-
 
 
 ** Programming Languages
@@ -1362,7 +1431,6 @@ Some commonly used expectations:
 
 *** Behavior Driven Development
 
-
 ** Ultra Learning
 
 *** Links [66%] [2/3]
@@ -1466,11 +1534,9 @@ Most intuitions are one of the following types:
 Once you feel you understand a concept see if you can use one of the
 above methods above to explain it.
 
-
 ** Version Control
 
 *** git
-
 
 ** Web Frameworks
 
@@ -1485,13 +1551,11 @@ above methods above to explain it.
 
 **** NodeJS
 
-
 ** Systems
 
 *** Links
 
 **** TODO [[https://en.wikipedia.org/wiki/Systems_thinking][Systems Thinking (Wikipedia)]]
-
 
 ** Simulations
 
