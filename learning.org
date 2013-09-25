@@ -1150,7 +1150,7 @@ Multiline Code Samples
 
 
 *** Scala
-
+    
 **** Links
 
 - [[http://docs.scala-lang.org/][Home Page]]
@@ -1210,6 +1210,13 @@ Multiline Code Samples
 - Message Delivery Guarantees :: Akka makes two guarantees: 1)
      at-most-once delivery (i.e. no guaranteed delivery) and 2)
      message ordering per sender–receiver pair ([[http://doc.akka.io/docs/akka/2.2.1/general/message-delivery-guarantees.html#message-delivery-guarantees][Source]]).
+
+- Remote Creation :: when akka creats an actor on a remote node
+
+- Remote Lookup :: when akka looks up an actor on a remote node.
+
+- Remoting Use Cases :: The two ways that remoting can be used.  See
+     Remote Lookup and Remote Creation
 
 - Scheduler :: If you need to make sure that something happens in the
                future, use the ActorSystem Scheduler.
@@ -1305,6 +1312,19 @@ an immutable Map) in an actor.
 When your actor needs to change the way it responds to messages and
 you don't want to use the FSM capabilities of Akka, consider the
 become method.
+
+****** Actor System and Ports
+
+Each actor system running on a server needs a different port even if
+the names of the actor systems are different.  This is because each
+Actor system maintains its own port.
+
+***** Remoting
+
+Resources [/]
+
+- [[http://doc.akka.io/docs/akka/2.2.1/scala/remoting.html][Akka Docs on Remoting]]
+- [[http://doc.akka.io/docs/akka/2.2.1/scala/remoting.html#remote-configuration-scala][Remote Configuration]]
 
 
 **** scalaz
